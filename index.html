@@ -85,6 +85,43 @@
   .gift-card h4{ font-size:13.5px; font-weight:700; margin:0 0 4px; }
   .gift-card p{ font-size:12px; color:var(--ink-faint); margin:0; line-height:1.6; }
 
+  /* ── Pricing ── */
+  .pricing-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:32px; align-items:stretch; }
+  .plan{
+    background:var(--paper); border:1px solid var(--line); border-radius:14px;
+    padding:26px 22px; display:flex; flex-direction:column;
+  }
+  .plan h3{ font-size:15px; font-weight:700; margin:0 0 6px; }
+  .plan .plan-desc{ font-size:12.5px; color:var(--ink-faint); margin:0 0 20px; min-height:34px; }
+  .plan .price{ font-family:'Zen Kaku Gothic New',sans-serif; font-weight:900; font-size:28px; margin:0 0 4px; }
+  .plan .price small{ font-size:12px; font-weight:500; color:var(--ink-faint); }
+  .plan .price-note{ font-size:11.5px; color:var(--ink-faint); margin:0 0 20px; min-height:16px; }
+  .plan ul{ list-style:none; padding:0; margin:0 0 24px; flex:1; display:flex; flex-direction:column; gap:9px; }
+  .plan li{ font-size:12.5px; color:var(--ink-soft); padding-left:18px; position:relative; }
+  .plan li::before{ content:"✓"; position:absolute; left:0; color:var(--accent-dark); font-weight:700; }
+  .plan .plan-cta{
+    display:block; text-align:center; text-decoration:none; font-size:13.5px; font-weight:700;
+    padding:12px; border-radius:8px; background:var(--ground); color:var(--ink); border:1px solid var(--line);
+  }
+  .plan.featured{
+    background:var(--ink); border-color:var(--ink); color:#fff; position:relative;
+    box-shadow:0 16px 40px rgba(26,26,46,0.22);
+  }
+  .plan.featured .plan-desc{ color:#B9B9CC; }
+  .plan.featured .price-note{ color:var(--accent); font-weight:700; }
+  .plan.featured li{ color:#D5D5E0; }
+  .plan.featured li::before{ color:var(--accent); }
+  .plan.featured .plan-cta{ background:var(--accent); color:var(--ink); border-color:var(--accent); }
+  .plan-badge{
+    position:absolute; top:-13px; left:50%; transform:translateX(-50%);
+    background:var(--accent); color:var(--ink); font-size:11px; font-weight:700;
+    padding:4px 14px; border-radius:12px; white-space:nowrap;
+  }
+
+  @media (max-width:680px){
+    .pricing-grid{ grid-template-columns:1fr; }
+  }
+
   /* ── Final CTA ── */
   .final-cta{ background:var(--ink); color:#fff; text-align:center; padding:72px 0; }
   .final-cta h2{ font-size:clamp(22px,4vw,30px); font-weight:900; margin:0 0 16px; text-wrap:balance; }
@@ -162,6 +199,74 @@
       <div class="gift-card"><span class="gift-icon">🎨</span><div><h4>トンマナ整理シート</h4><p>チャンネルの世界観を統一</p></div></div>
       <div class="gift-card"><span class="gift-icon">✉️</span><div><h4>企業案件の返信テンプレ</h4><p>依頼メールへの実例文</p></div></div>
       <div class="gift-card"><span class="gift-icon">⚡</span><div><h4>時短AIツール一覧</h4><p>制作・分析を効率化</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="marketing-curriculum">
+  <div class="wrap">
+    <p class="eyebrow-sm">Marketing Course</p>
+    <h2 class="section-title">マーケ講座（YouTube運用・収益化）全11本</h2>
+    <p class="section-lead">編集スキルだけでなく「どう伸ばすか」「どう稼ぐか」まで、実践的な考え方をまとめています。</p>
+    <div class="curriculum">
+      <div class="curriculum-item"><span class="curriculum-num">01</span><div><h3>YouTube収益源について</h3><p>収益の仕組みを正しく理解する</p></div></div>
+      <div class="curriculum-item"><span class="curriculum-num">02</span><div><h3>価値がある動画とは</h3><p>視聴者に届く動画の条件</p></div></div>
+      <div class="curriculum-item"><span class="curriculum-num">03</span><div><h3>視聴されない理由</h3><p>離脱を防ぐ構成のつくり方</p></div></div>
+      <div class="curriculum-item"><span class="curriculum-num">04</span><div><h3>競争が激しいから難しいという誤解</h3><p>思い込みを外す考え方</p></div></div>
+      <div class="curriculum-item"><span class="curriculum-num">05</span><div><h3>YouTubeアルゴリズムの理解</h3><p>仕組みを踏まえた動画設計</p></div></div>
+      <div class="curriculum-item"><span class="curriculum-num">06</span><div><h3>チャンネルブランディングとは</h3><p>自分らしさの土台づくり</p></div></div>
+      <div class="curriculum-item"><span class="curriculum-num">07</span><div><h3>ブランディングは模倣から始める</h3><p>差別化すべき部分の見極め方</p></div></div>
+      <div class="curriculum-item"><span class="curriculum-num">08</span><div><h3>チャンネルポジショニング</h3><p>収益につながる立ち位置の作り方</p></div></div>
+      <div class="curriculum-item"><span class="curriculum-num">09</span><div><h3>AIを使ったリサーチ方法</h3><p>ネタ探し・競合分析をAIで効率化</p></div><span class="curriculum-tag">注目</span></div>
+      <div class="curriculum-item"><span class="curriculum-num">10</span><div><h3>投稿頻度・継続・効率化</h3><p>無理なく続けるための運用設計</p></div></div>
+      <div class="curriculum-item"><span class="curriculum-num">11</span><div><h3>総再生時間・初心者がやりがちなミス</h3><p>数字の見方と落とし穴</p></div><span class="curriculum-tag">番外編あり</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="wrap">
+    <p class="eyebrow-sm">Plan</p>
+    <h2 class="section-title">本格的に学びたい方向けのプラン</h2>
+    <p class="section-lead">無料講座で基礎を体験したあと、さらに実践的な内容に進みたい方向けに、有料プランをご用意しています。</p>
+    <div class="pricing-grid">
+      <div class="plan">
+        <h3>動画編集講座</h3>
+        <p class="plan-desc">Premiere Proの実務フローを、基礎から実案件レベルまで</p>
+        <p class="price">¥78,000<small> （税込）</small></p>
+        <p class="price-note">LINEでの質問対応つき</p>
+        <ul>
+          <li>動画編集講座 全11本</li>
+          <li>特典テンプレート一式</li>
+          <li>LINEでの質問対応</li>
+        </ul>
+        <a href="#line" class="plan-cta">詳しく見る</a>
+      </div>
+      <div class="plan featured">
+        <span class="plan-badge">¥26,000おトク</span>
+        <h3>セットプラン</h3>
+        <p class="plan-desc">編集スキルと収益化戦略、両方を身につけたい方に</p>
+        <p class="price">¥150,000<small> （税込）</small></p>
+        <p class="price-note">バラ買いより¥26,000おトク</p>
+        <ul>
+          <li>動画編集講座 全11本</li>
+          <li>マーケ講座（YouTube運用）全11本</li>
+          <li>特典テンプレート一式</li>
+          <li>LINEでの質問対応</li>
+        </ul>
+        <a href="#line" class="plan-cta">詳しく見る</a>
+      </div>
+      <div class="plan">
+        <h3>マーケ講座</h3>
+        <p class="plan-desc">YouTube運用・収益化・ブランディングの考え方</p>
+        <p class="price">¥98,000<small> （税込）</small></p>
+        <p class="price-note">LINEでの質問対応つき</p>
+        <ul>
+          <li>マーケ講座（YouTube運用）全11本</li>
+          <li>LINEでの質問対応</li>
+        </ul>
+        <a href="#line" class="plan-cta">詳しく見る</a>
+      </div>
     </div>
   </div>
 </section>
