@@ -26,6 +26,11 @@ html,body{margin:0;height:100%;background:var(--ground);color:var(--ink);font-fa
 .nav-label{font-size:10px;letter-spacing:.1em;opacity:.65;}
 .nav-title{font-size:13.5px;font-weight:600;}
 
+.quicklinks{padding:0 22px 16px;display:flex;flex-direction:column;gap:8px;border-bottom:1px solid rgba(255,255,255,.15);margin-bottom:6px;}
+.quicklink{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);color:#fff;text-decoration:none;font-size:12.5px;font-weight:700;padding:9px 12px;border-radius:8px;}
+.quicklink:hover{background:rgba(255,255,255,.16);}
+.quicklink .ql-icon{font-size:14px;}
+
 .main{flex:1;min-width:0;padding:40px 48px 100px;}
 .panel-head{margin-bottom:20px;}
 .step-label{display:inline-block;background:var(--teal);color:#fff;font-size:11.5px;font-weight:700;letter-spacing:.1em;padding:5px 14px;border-radius:20px;margin-bottom:12px;}
@@ -85,6 +90,11 @@ table.settings tr:last-child td{background:#fafcfc;}
 <div class="app">
   <div class="sidebar">
     <div class="brand">まるちゃんオンライン講座<span>動画編集 × マーケ</span></div>
+
+    <div class="quicklinks">
+      <a class="quicklink" href="#panel-m1" onclick="selectStep('m1');return false;"><span class="ql-icon">📈</span>マーケ講座へジャンプ</a>
+      <a class="quicklink" href="https://syurob-lico-fukuoka.github.io/syuroB-LICO/manual.html" target="_blank" rel="noopener"><span class="ql-icon">📝</span>テキスト版で学ぶ</a>
+    </div>
 
     <div class="nav-group-label">動画編集講座</div>
     <button class="nav-item" data-target="s1" onclick="selectStep('s1')">
