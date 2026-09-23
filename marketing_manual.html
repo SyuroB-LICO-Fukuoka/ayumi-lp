@@ -8,86 +8,120 @@
   --amber:#f0b429; --amber-light:#fff3cd;
 }
 *{box-sizing:border-box;}
-body{margin:0;background:var(--ground);color:var(--ink);font-family:'Noto Sans JP',-apple-system,sans-serif;line-height:1.85;padding-bottom:80px;}
-.container{max-width:840px;margin:0 auto;padding:0 20px;}
-.cover{background:linear-gradient(135deg,var(--teal) 0%,var(--teal-dark) 100%);color:#fff;padding:64px 20px 56px;}
-.cover-inner{max-width:840px;margin:0 auto;}
-.eyebrow{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;opacity:.85;margin-bottom:14px;}
-.cover h1{font-size:clamp(28px,6vw,42px);font-weight:900;margin:0 0 10px;text-wrap:balance;}
-.cover .sub{font-size:14.5px;opacity:.92;margin:0;}
-.badge-row{display:flex;gap:10px;margin-top:28px;flex-wrap:wrap;}
-.badge{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35);border-radius:20px;padding:6px 16px;font-size:12.5px;}
+html,body{margin:0;height:100%;background:var(--ground);color:var(--ink);font-family:'Hiragino Sans','Noto Sans JP',-apple-system,sans-serif;}
+.app{display:flex;min-height:100vh;}
+.sidebar{width:280px;flex:none;background:var(--teal-dark);color:#fff;padding:24px 0;position:sticky;top:0;height:100vh;overflow-y:auto;}
+.brand{padding:0 22px 20px;font-size:15px;font-weight:800;letter-spacing:.02em;border-bottom:1px solid rgba(255,255,255,.15);margin-bottom:10px;}
+.brand span{display:block;font-size:11px;font-weight:500;opacity:.7;margin-top:4px;letter-spacing:.08em;}
+.quicklinks{padding:0 22px 16px;display:flex;flex-direction:column;gap:8px;border-bottom:1px solid rgba(255,255,255,.15);margin-bottom:6px;}
+.quicklink{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);color:#fff;text-decoration:none;font-size:12.5px;font-weight:700;padding:9px 12px;border-radius:8px;}
+.quicklink:hover{background:rgba(255,255,255,.16);}
+.quicklink .ql-icon{font-size:14px;}
+.nav-group-label{padding:16px 22px 6px;font-size:10.5px;font-weight:700;letter-spacing:.1em;opacity:.55;text-transform:uppercase;}
+.nav-item{display:flex;align-items:center;gap:12px;width:100%;background:none;border:none;color:#fff;text-align:left;padding:12px 22px;cursor:pointer;font-family:inherit;opacity:.82;}
+.nav-item:hover{background:rgba(255,255,255,.08);opacity:1;}
+.nav-item.active{background:rgba(255,255,255,.16);opacity:1;border-right:3px solid #fff;}
+.nav-num{font-size:11px;font-variant-numeric:tabular-nums;opacity:.6;flex:none;width:20px;}
+.nav-text{display:flex;flex-direction:column;}
+.nav-label{font-size:10px;letter-spacing:.1em;opacity:.65;}
+.nav-title{font-size:13.5px;font-weight:600;}
 
-nav.toc{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:20px 24px;margin:-32px 0 40px;box-shadow:0 6px 24px rgba(13,125,120,.08);position:relative;}
-nav.toc h2{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--teal-dark);margin:0 0 12px;}
-nav.toc ol,nav.toc ul{columns:2;column-gap:24px;margin:0;padding-left:20px;font-size:13.5px;list-style:none;}
-nav.toc li{margin-bottom:6px;break-inside:avoid;}
-nav.toc a{color:var(--ink-soft);text-decoration:none;}
-nav.toc a:hover{color:var(--teal-dark);}
-
-section.step{padding:52px 0;border-bottom:1px solid var(--line);}
-section.step:last-of-type{border-bottom:none;}
-.step-label{display:inline-block;background:var(--teal);color:#fff;font-size:11.5px;font-weight:700;letter-spacing:.1em;padding:5px 14px;border-radius:20px;margin-bottom:14px;}
-.step h2{font-size:26px;font-weight:900;margin:0 0 6px;}
-.step .lead{color:var(--ink-soft);font-size:14.5px;margin:0 0 26px;}
-.step h3{font-size:16px;font-weight:700;color:var(--teal-dark);margin:32px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--teal-light);}
-.step p.body-text{font-size:14.5px;margin:0 0 16px;}
-.step-list{padding-left:0;list-style:none;margin:0 0 20px;}
-.step-list li{position:relative;padding:8px 0 8px 22px;font-size:14.5px;}
+.main{flex:1;min-width:0;padding:40px 48px 100px;}
+.panel-head{margin-bottom:20px;}
+.step-label{display:inline-block;background:var(--teal);color:#fff;font-size:11.5px;font-weight:700;letter-spacing:.1em;padding:5px 14px;border-radius:20px;margin-bottom:12px;}
+.panel h2{font-size:26px;font-weight:900;margin:0 0 6px;}
+.panel h3{font-size:16px;font-weight:700;color:var(--teal-dark);margin:32px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--teal-light);}
+.panel p.body-text{font-size:14.5px;margin:0 0 16px;max-width:720px;line-height:1.85;}
+.step-list{padding-left:0;list-style:none;margin:0 0 20px;max-width:720px;}
+.step-list li{position:relative;padding:8px 0 8px 22px;font-size:14.5px;line-height:1.7;}
 .step-list li::before{content:'';position:absolute;left:2px;top:17px;width:7px;height:7px;border-radius:50%;background:var(--teal);}
 
-.video-pending-text{background:var(--teal-light);border-radius:12px;padding:32px 24px;text-align:center;color:var(--teal-dark);font-size:14px;font-weight:600;}
 .video-wrap{max-width:720px;background:#000;border-radius:12px;overflow:hidden;margin:20px 0 28px;box-shadow:0 8px 30px rgba(0,0,0,.18);position:relative;padding-top:40.5%;height:0;}
 .video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
 .video-note{max-width:720px;font-size:12px;color:var(--ink-soft);margin:-20px 0 24px;}
+.video-pending-text{max-width:720px;background:var(--teal-light);border-radius:12px;padding:32px 24px;text-align:center;color:var(--teal-dark);font-size:14px;font-weight:600;}
 
-.callout{max-width:720px;background:var(--teal-light);border-left:4px solid var(--teal);border-radius:0 10px 10px 0;padding:14px 18px;font-size:13.5px;color:var(--ink-soft);margin:18px 0;}
-.callout strong{color:var(--teal-dark);}
+.progress{max-width:720px;display:flex;justify-content:space-between;align-items:center;margin-top:36px;padding-top:20px;border-top:1px solid var(--line);}
+.progress button{background:var(--teal);color:#fff;border:none;padding:10px 22px;border-radius:8px;font-size:13.5px;font-weight:700;cursor:pointer;font-family:inherit;}
+.progress button:disabled{background:var(--line);color:#9aa8a8;cursor:default;}
+.progress .pos{font-size:12.5px;color:var(--ink-soft);font-variant-numeric:tabular-nums;}
 
-footer.done{text-align:center;padding:60px 20px;color:var(--ink-soft);font-size:13px;}
-
-@media (max-width:600px){
-  nav.toc ol,nav.toc ul{columns:1;}
+@media (max-width:800px){
+  .app{flex-direction:column;}
+  .sidebar{width:100%;height:auto;position:relative;overflow-x:auto;white-space:nowrap;padding:14px 0;}
+  .brand{display:none;}
+  .quicklinks{display:none;}
+  .nav-group-label{display:none;}
+  .nav-item{display:inline-flex;padding:8px 14px;}
+  .main{padding:24px 18px 80px;}
 }
 </style>
 
-<div class="cover">
-  <div class="cover-inner">
-    <p class="eyebrow">Marketing Course · テキスト版</p>
-    <h1>マーケ講座 / YouTube運用・収益化</h1>
-    <p class="sub">チャンネル運用と収益化の考え方を、全11本のテキストで解説します。動画版は順次公開予定です。</p>
-    <div class="badge-row">
-      <span class="badge">全11本のテキスト講座</span>
-      <span class="badge">YouTube運用・ブランディング・収益化</span>
+<div class="app">
+  <div class="sidebar">
+    <div class="brand">まるちゃんオンライン講座<span>マーケ講座</span></div>
+
+    <div class="quicklinks">
+      <a class="quicklink" href="content.html"><span class="ql-icon">🎬</span>動画編集講座へ</a>
     </div>
-    <a href="content.html" style="display:inline-block;margin-top:24px;padding:10px 18px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);border-radius:8px;color:#fff;text-decoration:none;font-size:13px;">▶ 動画講座に戻る</a>
+
+    <div class="nav-group-label">マーケ講座</div>
+<button class="nav-item" data-target="m1" onclick="selectStep('m1')">
+          <span class="nav-num">01</span>
+          <span class="nav-text"><span class="nav-label">MARKETING 1</span><span class="nav-title">YouTube収益はどこから生まれているのか</span></span>
+        </button>
+<button class="nav-item" data-target="m2" onclick="selectStep('m2')">
+          <span class="nav-num">02</span>
+          <span class="nav-text"><span class="nav-label">MARKETING 2</span><span class="nav-title">「見てよかった」と思われる動画の条件</span></span>
+        </button>
+<button class="nav-item" data-target="m3" onclick="selectStep('m3')">
+          <span class="nav-num">03</span>
+          <span class="nav-text"><span class="nav-label">MARKETING 3</span><span class="nav-title">視聴者の目線に立つとはどういうことか</span></span>
+        </button>
+<button class="nav-item" data-target="m4" onclick="selectStep('m4')">
+          <span class="nav-num">04</span>
+          <span class="nav-text"><span class="nav-label">MARKETING 4</span><span class="nav-title">「競合が強いから無理」という思い込みを崩す</span></span>
+        </button>
+<button class="nav-item" data-target="m5" onclick="selectStep('m5')">
+          <span class="nav-num">05</span>
+          <span class="nav-text"><span class="nav-label">MARKETING 5</span><span class="nav-title">YouTubeのおすすめに選ばれる仕組み</span></span>
+        </button>
+<button class="nav-item" data-target="m6" onclick="selectStep('m6')">
+          <span class="nav-num">06</span>
+          <span class="nav-text"><span class="nav-label">MARKETING 6</span><span class="nav-title">チャンネルの「らしさ」はどう作られるのか</span></span>
+        </button>
+<button class="nav-item" data-target="m7" onclick="selectStep('m7')">
+          <span class="nav-num">07</span>
+          <span class="nav-text"><span class="nav-label">MARKETING 7</span><span class="nav-title">個性は、模倣の組み合わせから生まれる</span></span>
+        </button>
+<button class="nav-item" data-target="m8" onclick="selectStep('m8')">
+          <span class="nav-num">08</span>
+          <span class="nav-text"><span class="nav-label">MARKETING 8</span><span class="nav-title">自分の立ち位置をどう定めるか</span></span>
+        </button>
+<button class="nav-item" data-target="m9" onclick="selectStep('m9')">
+          <span class="nav-num">09</span>
+          <span class="nav-text"><span class="nav-label">MARKETING 9</span><span class="nav-title">AIでリサーチを効率化する実践法</span></span>
+        </button>
+<button class="nav-item" data-target="m10" onclick="selectStep('m10')">
+          <span class="nav-num">10</span>
+          <span class="nav-text"><span class="nav-label">MARKETING 10</span><span class="nav-title">続けられる運用ペースのつくり方</span></span>
+        </button>
+<button class="nav-item" data-target="m11a" onclick="selectStep('m11a')">
+          <span class="nav-num">11</span>
+          <span class="nav-text"><span class="nav-label">MARKETING 11-1</span><span class="nav-title">総再生時間の底上げと、初心者が陥りやすい落とし穴</span></span>
+        </button>
+<button class="nav-item" data-target="m11b" onclick="selectStep('m11b')">
+          <span class="nav-num">12</span>
+          <span class="nav-text"><span class="nav-label">MARKETING 11-2</span><span class="nav-title">総再生時間の底上げと、初心者が陥りやすい落とし穴</span></span>
+        </button>
   </div>
-</div>
-
-<div class="container">
-<nav class="toc">
-  <h2>Contents</h2>
-  <ul>
-<li><a href="#m1">1 YouTube収益はどこから生まれているのか</a></li>
-<li><a href="#m2">2 「見てよかった」と思われる動画の条件</a></li>
-<li><a href="#m3">3 視聴者の目線に立つとはどういうことか</a></li>
-<li><a href="#m4">4 「競合が強いから無理」という思い込みを崩す</a></li>
-<li><a href="#m5">5 YouTubeのおすすめに選ばれる仕組み</a></li>
-<li><a href="#m6">6 チャンネルの「らしさ」はどう作られるのか</a></li>
-<li><a href="#m7">7 個性は、模倣の組み合わせから生まれる</a></li>
-<li><a href="#m8">8 自分の立ち位置をどう定めるか</a></li>
-<li><a href="#m9">9 AIでリサーチを効率化する実践法</a></li>
-<li><a href="#m10">10 続けられる運用ペースのつくり方</a></li>
-<li><a href="#m11a">11-1 総再生時間の底上げと、初心者が陥りやすい落とし穴</a></li>
-<li><a href="#m11b">11-2 総再生時間の底上げと、初心者が陥りやすい落とし穴</a></li>
-  </ul>
-</nav>
-
-
-<section class="step" id="m1">
-  <span class="step-label">MARKETING 1</span>
-  <h2>YouTube収益はどこから生まれているのか</h2>
-  <p class="body-text">こんにちは。今回はYouTubeでどうやって収益を得られるのか、その方法を一つひとつ紹介していきます。収益の入り口は思っているよりたくさんあるので、順番に確認していきましょう。</p>
+  <div class="main">
+    <div class="panel" id="panel-m1" style="display:block">
+      <div class="panel-head">
+        <span class="step-label">MARKETING 1</span>
+        <h2>YouTube収益はどこから生まれているのか</h2>
+      </div>
+      <p class="body-text">こんにちは。今回はYouTubeでどうやって収益を得られるのか、その方法を一つひとつ紹介していきます。収益の入り口は思っているよりたくさんあるので、順番に確認していきましょう。</p>
 <h3>1. 広告収益（YPP）</h3>
 <p class="body-text">もっとも知られているのが、YouTubeパートナープログラムによる広告収益です。動画の中に流れる広告を設定することで得られる収益で、参加するには「直近12ヶ月で総再生時間4,000時間以上」「チャンネル登録者数1,000人以上」（ショート動画中心の場合は直近90日で1,000万再生など）といった条件があります。</p>
 <p class="body-text">ここで大事なのは、条件を満たしても自動的に収益化されるわけではなく、自分でYouTubeに申請する必要があるということです。申請から承認まで1ヶ月ほどかかることが多いので、条件を満たしたらすぐに申請しておきましょう。申請から承認までの間に伸びた再生数分は収益化されないので、後回しにするほど損をしてしまいます。</p>
@@ -113,17 +147,18 @@ footer.done{text-align:center;padding:60px 20px;color:var(--ink-soft);font-size:
 <p class="body-text">最後に一つだけ。SNS運用代行でも商品づくりでも、「完璧じゃなければいけない」と思いすぎる必要はありません。相手が価値を感じてくれれば、それは十分商品になります。情報やスキルは全力で提供しつつ、自分の気持ちは「6割できたらOK」くらいで踏み出してみてください。完璧主義になりすぎると、一歩を踏み出す勇気が持てなくなってしまいます。</p>
 <p class="body-text">YouTubeを見るときは、他の発信者がプロフィール欄でどんなリンクを貼っているか、何を目的に発信しているかを観察してみると、新しい収益のヒントが見つかるはずです。</p>
 <p class="body-text">ご視聴ありがとうございました。また次の動画でお会いしましょう。</p>
-</section>
+    </div>
 
-
-<section class="step" id="m2">
-  <span class="step-label">MARKETING 2</span>
-  <h2>「見てよかった」と思われる動画の条件</h2>
-  <div class="video-wrap">
-    <iframe src="https://drive.google.com/file/d/1gd_at6qa5hXS0wvA4fy8l8C90ZmefDBj/preview" allow="autoplay" allowfullscreen></iframe>
-  </div>
-  <p class="video-note">※仮動画です。完成版に差し替え予定です。</p>
-  <p class="body-text">こんにちは。今日は「なぜあなたの動画は視聴者に届かないのか」というテーマでお話しします。</p>
+    <div class="panel" id="panel-m2" style="display:none">
+      <div class="panel-head">
+        <span class="step-label">MARKETING 2</span>
+        <h2>「見てよかった」と思われる動画の条件</h2>
+      </div>
+      <div class="video-wrap">
+        <iframe src="https://drive.google.com/file/d/1gd_at6qa5hXS0wvA4fy8l8C90ZmefDBj/preview" allow="autoplay" allowfullscreen></iframe>
+      </div>
+      <p class="video-note">※仮動画です。完成版に差し替え予定です。</p>
+      <p class="body-text">こんにちは。今日は「なぜあなたの動画は視聴者に届かないのか」というテーマでお話しします。</p>
 <p class="body-text">もしあなたが今、一生懸命動画を作っているのに再生数が伸びない、登録者が増えない、と感じているなら、それはカメラの性能や編集スキルの問題ではないかもしれません。多くの人が「もっと機材を良くすれば」「もっと編集を凝れば」と考えて、高いカメラや編集ソフトに投資します。ですが、実際にチャンネルが伸び悩んでいる人の動画を見せてもらうと、原因はほとんどの場合そこにはありません。今日お伝えする「価値」という考え方を知るだけで、あなたの動画づくりは大きく変わります。10分ほどお付き合いください。</p>
 <h3>価値のある動画を作るべき理由とは</h3>
 <p class="body-text">まず結論からお伝えします。YouTubeでチャンネルを伸ばせるかどうかは、「技術力」ではなく「視聴者にどんな価値を届けられるか」で決まります。</p>
@@ -165,13 +200,14 @@ footer.done{text-align:center;padding:60px 20px;color:var(--ink-soft);font-size:
 <p class="body-text">今日の内容をまとめます。動画づくりで最初に考えるべきなのは、機材でも編集技術でもなく、「誰に、どんな価値を届けたいか」ということ。そして、その価値には情報・感情・関係性という3つの種類があり、視聴者が自分を重ねられる具体性があるかどうかが、共感を呼べるかどうかの分かれ目になります。</p>
 <p class="body-text">次のセッションでは、実際に自分のチャンネルでどんな価値を提供していくか、具体的に言語化するワークに取り組んでいきます。今日学んだ「価値」という視点を持って、ぜひ自分のチャンネルを見直してみてください。</p>
 <p class="body-text">最後にもう一度だけ確認しておきましょう。あなたの動画を見た人が、見終わったあとにどんな顔をしていてほしいですか。安心した顔でしょうか、やる気に満ちた顔でしょうか、それとも思わず笑ってしまう顔でしょうか。その答えこそが、あなたのチャンネルが届けるべき「価値」の正体です。技術よりも先に、その答えを持って撮影に臨む。今日からそれを意識するだけで、あなたの動画は確実に変わっていきます。</p>
-</section>
+    </div>
 
-
-<section class="step" id="m3">
-  <span class="step-label">MARKETING 3</span>
-  <h2>視聴者の目線に立つとはどういうことか</h2>
-  <p class="body-text">こんにちは。今回は「視聴者の立場を理解する」ということについてお話しします。</p>
+    <div class="panel" id="panel-m3" style="display:none">
+      <div class="panel-head">
+        <span class="step-label">MARKETING 3</span>
+        <h2>視聴者の目線に立つとはどういうことか</h2>
+      </div>
+      <p class="body-text">こんにちは。今回は「視聴者の立場を理解する」ということについてお話しします。</p>
 <p class="body-text">今まで皆さんは視聴者としてYouTubeを見てきたと思いますが、これからはクリエーター・運用者という立場に変わっていきます。作る側に回ると、動画作りがどれだけ大変か身をもって分かるようになる一方で、「視聴者だった頃の自分」をつい忘れてしまいがちです。動画を長く見てもらい、登録者を増やしていくためには、この視聴者目線を忘れないことがとても重要です。</p>
 <h3>映画館とテレビの違いで考える</h3>
 <p class="body-text">想像してみてください。映画館でポップコーンとジュースを買って、ワクワクしながら映画が始まります。ところが、始まってみたら想像以上につまらなかった。そんなとき、皆さんならどうしますか。お金を払っているから最後まで見る人もいれば、途中で席を立つ人もいるでしょう。</p>
@@ -188,13 +224,14 @@ footer.done{text-align:center;padding:60px 20px;color:var(--ink-soft);font-size:
 <p class="body-text">自分がアップロードした動画を、視聴者として何分まで見続けられるか、どこで離脱したくなるかを実際に確認してみると、改善すべきポイントが自然と見えてきます。一つひとつ直していけば、視聴時間も登録者も少しずつ増えていきます。</p>
 <p class="body-text">視聴者だった頃の自分の感覚を、常に思い出しながら動画作りに向き合っていきましょう。</p>
 <p class="body-text">ご視聴ありがとうございました。また次の動画でお会いしましょう。</p>
-</section>
+    </div>
 
-
-<section class="step" id="m4">
-  <span class="step-label">MARKETING 4</span>
-  <h2>「競合が強いから無理」という思い込みを崩す</h2>
-  <p class="body-text">こんにちは。今回は「競争が激しいから勝てない」という思い込みについてお話しします。</p>
+    <div class="panel" id="panel-m4" style="display:none">
+      <div class="panel-head">
+        <span class="step-label">MARKETING 4</span>
+        <h2>「競合が強いから無理」という思い込みを崩す</h2>
+      </div>
+      <p class="body-text">こんにちは。今回は「競争が激しいから勝てない」という思い込みについてお話しします。</p>
 <p class="body-text">「今からYouTubeを始めるのは遅くないですか?」という質問をよくいただきます。そのたびに私は「今こそ絶好のタイミングです」とお伝えしています。なぜそう言えるのか、一緒に見ていきましょう。</p>
 <h3>市場が大きいことは不利ではない</h3>
 <p class="body-text">日本で一番使われているSNSはLINE、その次に使われているのがYouTubeです。日本人のおよそ6割がYouTubeを利用しているというデータもあります。この数字を見ると「競争が激しすぎるから諦めた方がいい」と感じる方もいるかもしれません。</p>
@@ -210,13 +247,14 @@ footer.done{text-align:center;padding:60px 20px;color:var(--ink-soft);font-size:
 <h3>まとめ</h3>
 <p class="body-text">YouTubeの世界にライバルはいません。全員が仲間です。この前提をしっかり理解した上で、動画作りに取り組んでいきましょう。</p>
 <p class="body-text">ご視聴ありがとうございました。また次の動画でお会いしましょう。</p>
-</section>
+    </div>
 
-
-<section class="step" id="m5">
-  <span class="step-label">MARKETING 5</span>
-  <h2>YouTubeのおすすめに選ばれる仕組み</h2>
-  <p class="body-text">こんにちは。今回はYouTubeのアルゴリズムについて、知っておくべき大切な知識をお伝えします。</p>
+    <div class="panel" id="panel-m5" style="display:none">
+      <div class="panel-head">
+        <span class="step-label">MARKETING 5</span>
+        <h2>YouTubeのおすすめに選ばれる仕組み</h2>
+      </div>
+      <p class="body-text">こんにちは。今回はYouTubeのアルゴリズムについて、知っておくべき大切な知識をお伝えします。</p>
 <p class="body-text">アルゴリズムについてはネット上に膨大な情報があり、何が正しいのか分からなくなっている方も多いと思います。特に初心者のうちは、動画が再生されないと「アルゴリズムがおかしいのでは」と感じてしまいがちです。今日で、その混乱を整理していきましょう。</p>
 <h3>アルゴリズムとは何か</h3>
 <p class="body-text">アルゴリズムとは、論理的に物事を解決するための手順や命令の集まりのことです。これだけ聞くと難しく感じますが、身近な例で考えてみましょう。</p>
@@ -233,13 +271,14 @@ footer.done{text-align:center;padding:60px 20px;color:var(--ink-soft);font-size:
 <h3>覚えておくべきこと</h3>
 <p class="body-text">今日一番覚えておいてほしいのは、YouTubeには複数のアルゴリズムが存在するけれど、チャンネルを伸ばすうえで意識すべきなのは「動画の露出を増やすアルゴリズム」だけだということです。YouTubeは少数の視聴者への表示から始めて、反応をじっくり見たうえで露出を広げるかどうかを判断しています。その基準となるクリック率7%、視聴維持率20%という数字を、まずはしっかり覚えておきましょう。</p>
 <p class="body-text">ご視聴ありがとうございました。また次の動画でお会いしましょう。</p>
-</section>
+    </div>
 
-
-<section class="step" id="m6">
-  <span class="step-label">MARKETING 6</span>
-  <h2>チャンネルの「らしさ」はどう作られるのか</h2>
-  <p class="body-text">こんにちは。今回はチャンネルのブランディングについてお話しします。</p>
+    <div class="panel" id="panel-m6" style="display:none">
+      <div class="panel-head">
+        <span class="step-label">MARKETING 6</span>
+        <h2>チャンネルの「らしさ」はどう作られるのか</h2>
+      </div>
+      <p class="body-text">こんにちは。今回はチャンネルのブランディングについてお話しします。</p>
 <h3>「なぜ見なければいけないのか」を自分に問う</h3>
 <p class="body-text">まず、自分が立ち上げたいジャンルで発信している他のYouTubeチャンネルを探してみてください。登録者が多いチャンネルもあれば、始めたばかりのチャンネルもたくさん出てくるはずです。</p>
 <p class="body-text">これだけ多くのチャンネルがひしめく中で、「視聴者はなぜ自分の動画を見なければいけないのか」を、自分自身に問いかけてみてください。最初からこの質問にはっきり答えられる人はいません。ですが、これから動画を伸ばしていきたいのであれば、避けて通れない問いです。この質問に答えられるようにならない限り、チャンネルと再生数は伸びていかないと考えてください。</p>
@@ -257,13 +296,14 @@ footer.done{text-align:center;padding:60px 20px;color:var(--ink-soft);font-size:
 <h3>最初から完璧でなくていい</h3>
 <p class="body-text">ブランドメッセージとブランドイメージは、最初にしっかり固めて発信していくのが理想ですが、後から変更することも十分できます。最初から100%完璧なものを作ろうとするのではなく、まずやってみて、うまくいかなければ少しずつ試行錯誤しながら直していく。そのくらいの気持ちで始めてみてください。</p>
 <p class="body-text">ご視聴ありがとうございました。また次の動画でお会いしましょう。</p>
-</section>
+    </div>
 
-
-<section class="step" id="m7">
-  <span class="step-label">MARKETING 7</span>
-  <h2>個性は、模倣の組み合わせから生まれる</h2>
-  <p class="body-text">こんにちは。今回は「ブランディングは模倣から始めよう」というお話をしていきます。</p>
+    <div class="panel" id="panel-m7" style="display:none">
+      <div class="panel-head">
+        <span class="step-label">MARKETING 7</span>
+        <h2>個性は、模倣の組み合わせから生まれる</h2>
+      </div>
+      <p class="body-text">こんにちは。今回は「ブランディングは模倣から始めよう」というお話をしていきます。</p>
 <p class="body-text">最近、私のチャンネルにこんなコメントをいただくことが増えました。「他のチャンネルと違って、なんかセンスあるよね」と。すごく嬉しい言葉で、本当にありがたいのですが、実はこれ、特別なセンスがあるからではありません。ある一つの考え方を大事にしているだけなんです。今日は、その考え方を全部お伝えします。</p>
 <p class="body-text">「自分にはセンスがないから、個性的なチャンネルなんて作れない」と思っている方も多いと思います。でも安心してください。今日お話しする内容は、センスの有無に関係なく、誰でも同じ手順で実践できるものです。むしろ、センスに頼らないからこそ、再現性があります。10分ほどお付き合いください。</p>
 <h3>同じような動画に飽きていませんか</h3>
@@ -297,13 +337,14 @@ footer.done{text-align:center;padding:60px 20px;color:var(--ink-soft);font-size:
 <p class="body-text">センスがあるかどうかを気にする必要はありません。必要なのは、模倣と差別化を正しく使い分ける仕組みを持つことです。ぜひ今日から、気になった動画をどんどん保存する習慣を始めてみてください。</p>
 <p class="body-text">「自分にはオリジナリティがない」と悩む必要は、もうありません。オリジナリティとは、ゼロから生み出すものではなく、集めたものの組み合わせ方で生まれるものだからです。今日から、良いと思った瞬間の「いいな」を、一つひとつ拾い集めていってください。</p>
 <p class="body-text">最後までご視聴ありがとうございます。また次の動画でお会いしましょう。</p>
-</section>
+    </div>
 
-
-<section class="step" id="m8">
-  <span class="step-label">MARKETING 8</span>
-  <h2>自分の立ち位置をどう定めるか</h2>
-  <p class="body-text">こんにちは。前回はチャンネルブランディングについてお話ししました。今回はブランディングの次に大事な「ポジショニング」についてです。</p>
+    <div class="panel" id="panel-m8" style="display:none">
+      <div class="panel-head">
+        <span class="step-label">MARKETING 8</span>
+        <h2>自分の立ち位置をどう定めるか</h2>
+      </div>
+      <p class="body-text">こんにちは。前回はチャンネルブランディングについてお話ししました。今回はブランディングの次に大事な「ポジショニング」についてです。</p>
 <p class="body-text">「皆さんのチャンネルのポジションは何ですか?」と聞かれて、最初から答えられる人はいません。今日は、その答えを自分で出せるようになることを目指しましょう。</p>
 <h3>ポジショニングとは何か</h3>
 <p class="body-text">ジャンルとブランドを決めたら、次に考えるべきなのがポジショニングです。ここで言うポジションとは、「視聴者からどう見られているか」、つまり社会的な立ち位置や専門性のことを指します。</p>
@@ -322,17 +363,18 @@ footer.done{text-align:center;padding:60px 20px;color:var(--ink-soft);font-size:
 <p class="body-text">私自身、動画編集の技術はあってもそこまで詳しくなかった時期があります。ですが、映画に関する動画を作り始めたことをきっかけに、そこから多くのことを学び、今では専門家のポジションとして見られるようになり、オンラインで生徒さんに教えたり、その専門性から企業案件の依頼を毎月いただけるようになりました。</p>
 <p class="body-text">学ぶこと自体が好きで、時間をかける準備ができているなら、最初から専門家ポジションを狙うのも十分ありです。どのポジションを選ぶにせよ、それぞれの成長スピードと特徴を理解した上で、自分に合ったポジションを選んでいきましょう。</p>
 <p class="body-text">ご視聴ありがとうございました。お疲れ様です。</p>
-</section>
+    </div>
 
-
-<section class="step" id="m9">
-  <span class="step-label">MARKETING 9</span>
-  <h2>AIでリサーチを効率化する実践法</h2>
-  <div class="video-wrap">
-    <iframe src="https://drive.google.com/file/d/1-19gAhsvOqDKZnHH-F2RagLwQDllXI5d/preview" allow="autoplay" allowfullscreen></iframe>
-  </div>
-  <p class="video-note">※仮動画です。完成版に差し替え予定です。</p>
-  <p class="body-text">こんにちは。今回は「AIを使ったリサーチ方法」について、具体的なやり方までお話しします。</p>
+    <div class="panel" id="panel-m9" style="display:none">
+      <div class="panel-head">
+        <span class="step-label">MARKETING 9</span>
+        <h2>AIでリサーチを効率化する実践法</h2>
+      </div>
+      <div class="video-wrap">
+        <iframe src="https://drive.google.com/file/d/1-19gAhsvOqDKZnHH-F2RagLwQDllXI5d/preview" allow="autoplay" allowfullscreen></iframe>
+      </div>
+      <p class="video-note">※仮動画です。完成版に差し替え予定です。</p>
+      <p class="body-text">こんにちは。今回は「AIを使ったリサーチ方法」について、具体的なやり方までお話しします。</p>
 <p class="body-text">「AIを使うと動画作りが楽になるらしい」ということは、もう多くの人が知っています。ですが実際に聞いてみると、「なんとなくChatGPTに台本を書かせている」だけで止まっている人がほとんどです。今日は、リサーチという一番地味だけど一番重要な工程で、AIをどう使うと本当に効果が出るのかをお伝えします。</p>
 <h3>なぜ今、AIリサーチが差になるのか</h3>
 <p class="body-text">まず知っておいてほしいのは、今やほとんどのクリエイターが、何らかの形でAIを制作に取り入れているという事実です。動画のネタ出しや台本作成にAIを使うこと自体は、もう特別なことではなくなっています。</p>
@@ -374,13 +416,14 @@ footer.done{text-align:center;padding:60px 20px;color:var(--ink-soft);font-size:
 <li>[Best AI Tools for YouTube Creators in 2026](https://marketmakermgmt.com/blog-list2/youtube-ai-tools-creators-2026)</li>
 <li>[ChatGPTで競合分析を実施する方法 | ZIDAI Notebook](https://zidaiinc.com/method/competitive-analysis-chatgpt-ai/)</li>
 </ul>
-</section>
+    </div>
 
-
-<section class="step" id="m10">
-  <span class="step-label">MARKETING 10</span>
-  <h2>続けられる運用ペースのつくり方</h2>
-  <p class="body-text">こんにちは。今回は動画の投稿頻度についてお話しします。</p>
+    <div class="panel" id="panel-m10" style="display:none">
+      <div class="panel-head">
+        <span class="step-label">MARKETING 10</span>
+        <h2>続けられる運用ペースのつくり方</h2>
+      </div>
+      <p class="body-text">こんにちは。今回は動画の投稿頻度についてお話しします。</p>
 <p class="body-text">「YouTubeは週1〜2本投稿が絶対必要」「Instagramは週3必須」「毎日発信すべき」など、いろいろな情報が飛び交っていて、何を信じればいいか分からなくなっている方も多いと思います。</p>
 <h3>投稿頻度を上げれば早く伸びる、は思い込み</h3>
 <p class="body-text">初心者がよく勘違いしてしまうのが、「投稿頻度を上げれば、それだけ早く登録者が増える」という考え方です。ですが、毎日動画を作るのは決して簡単ではありません。早く作れる人でも1日最低3時間はかかり、休む日もほとんどないペースを続けるのは、だんだん精神的にきつくなっていきます。</p>
@@ -396,13 +439,14 @@ footer.done{text-align:center;padding:60px 20px;color:var(--ink-soft);font-size:
 <p class="body-text">大事なのは、自分の全力を出しきった1本を作ったうえで、それを積み重ねながら少しずつ効率と品質の両方を上げていくことです。ただ同じクオリティのまま本数だけを重ねても、成長曲線はなかなか上がっていきません。逆に、経験を積んだ人ほど同じ作業時間でも高い品質を出せるようになり、結果的に早く成果にたどり着けます。</p>
 <p class="body-text">品質が十分でないうちに効率化ばかり考えるのではなく、まずは自分にとっての「バズる1本」を出せる品質にたどり着くこと。そこに到達してから、効率化や頻度を考えるのが正しい順番です。本当に時間がないときは、月1本からでも構いません。まずは1本の動画にどれだけ力がかかるかを把握し、そこから徐々に頻度を上げていきましょう。</p>
 <p class="body-text">ご視聴ありがとうございました。また次の動画でお会いしましょう。</p>
-</section>
+    </div>
 
-
-<section class="step" id="m11a">
-  <span class="step-label">MARKETING 11</span>
-  <h2>総再生時間の底上げと、初心者が陥りやすい落とし穴（前編）</h2>
-  <p class="body-text">こんにちは。今回は再生回数を伸ばすうえで欠かせない「総再生時間」についてお話しします。</p>
+    <div class="panel" id="panel-m11a" style="display:none">
+      <div class="panel-head">
+        <span class="step-label">MARKETING 11-1</span>
+        <h2>総再生時間の底上げと、初心者が陥りやすい落とし穴（前編）</h2>
+      </div>
+      <p class="body-text">こんにちは。今回は再生回数を伸ばすうえで欠かせない「総再生時間」についてお話しします。</p>
 <p class="body-text">極端な例を挙げると、通常動画を「超長尺動画」にする、という方法があります。一般的な動画は10〜30分程度の長さですが、超長尺動画は1時間を超えるものを指します。「そんなに長かったら誰も見ないのでは」と思うかもしれませんが、実際には歴史系チャンネルなどで1時間を超える動画が最も再生されているケースがよくあります。これは歴史系に限らず、他ジャンルのチャンネルでも同じ傾向が見られます。</p>
 <h3>なぜYouTubeは長い動画を優遇するのか</h3>
 <p class="body-text">どのSNS・メディアも、できるだけ長く自分たちのプラットフォームに滞在してほしいと考えています。YouTubeも同じで、視聴維持率が高く、総再生時間が長い動画ほど、より多くの人に露出させる仕組みになっています。露出が増えれば、結果として再生回数も自然に伸びていきます。</p>
@@ -413,13 +457,14 @@ footer.done{text-align:center;padding:60px 20px;color:var(--ink-soft);font-size:
 <h3>まとめ</h3>
 <p class="body-text">再生回数だけを見て一喜一憂するのではなく、「どれだけ長く、集中して見てもらえたか」という総再生時間の視点を持つことが、YouTubeで伸びていくための大切な考え方です。企画の面白さと合わせて、動画の尺そのものも戦略の一部として意識してみてください。</p>
 <p class="body-text">ご視聴ありがとうございました。また次の動画でお会いしましょう。</p>
-</section>
+    </div>
 
-
-<section class="step" id="m11b">
-  <span class="step-label">MARKETING 11</span>
-  <h2>総再生時間の底上げと、初心者が陥りやすい落とし穴（後編）</h2>
-  <p class="body-text">こんにちは。今回はYouTubeチャンネルを伸ばそうとしている人が陥りがちなミスについてお話しします。</p>
+    <div class="panel" id="panel-m11b" style="display:none">
+      <div class="panel-head">
+        <span class="step-label">MARKETING 11-2</span>
+        <h2>総再生時間の底上げと、初心者が陥りやすい落とし穴（後編）</h2>
+      </div>
+      <p class="body-text">こんにちは。今回はYouTubeチャンネルを伸ばそうとしている人が陥りがちなミスについてお話しします。</p>
 <h3>1. 相互登録</h3>
 <p class="body-text">これはYouTuber同士がお互いのチャンネルを登録し合うことです。「登録者が1000人に届かない」と焦ったときに、つい手を出したくなる方法ですが、実は非常に大きな悪影響があります。</p>
 <p class="body-text">動画をアップロードすると、まず一番最初に登録者へ通知が届きます。相互登録した人は、内容に興味があって登録したわけではないので、通知が来ても動画を見てくれません。見てくれたとしても、本当のファンに比べて視聴時間はかなり短くなります。結果としてクリック率や視聴維持率が下がってしまい、動画が伸びにくくなります。特にチャンネルを立ち上げたばかりの時期は、一人ひとりの視聴データがアルゴリズムの評価に大きく影響するため、相互登録は絶対に避けるべきです。これはInstagramなど他のSNSでも同じことが言えます。</p>
@@ -433,10 +478,47 @@ footer.done{text-align:center;padding:60px 20px;color:var(--ink-soft);font-size:
 <p class="body-text">YouTubeのアルゴリズムは優秀なので、良い動画を作れば自然に広がっていきます。無理にお金をかけて宣伝する必要はありません。私自身、初めてチャンネルを立ち上げたばかりの頃はこの発想がまったくなく、毎晩のように外に出て、歩いている人に「チャンネル登録してください」と声をかけていたことがあります。今思うと、かなり遠回りだったと感じています。</p>
 <p class="body-text">皆さんには同じ遠回りをしてほしくないので、この動画に今回の内容を入れました。焦って伸ばそうとすると、こうした方法がつい頭に浮かんでしまうものですが、気をつけましょう。正しいやり方でコツコツ続けていけば、登録者も再生数も必ずついてきます。信じて続けていきましょう。</p>
 <p class="body-text">ご視聴ありがとうございました。お疲れ様です。</p>
-</section>
+    </div>
 
-
-<footer class="done">マーケ講座 テキスト版 · まるちゃんオンライン講座</footer>
+    <div class="progress">
+      <button class="btn-prev" onclick="go(-1)">← 前のトピック</button>
+      <span class="pos"></span>
+      <button class="btn-next" onclick="go(1)">次のトピック →</button>
+    </div>
+  </div>
 </div>
+
+<script>
+const order = ['m1','m2','m3','m4','m5','m6','m7','m8','m9','m10','m11a','m11b'];
+function selectStep(id){
+  order.forEach(o => {
+    document.getElementById('panel-'+o).style.display = (o===id) ? 'block' : 'none';
+    document.querySelector('[data-target="'+o+'"]').classList.toggle('active', o===id);
+  });
+  updateProgress(id);
+  window.scrollTo({top:0, behavior:'instant'});
+  try{ localStorage.setItem('marketing_step', id); }catch(e){}
+}
+function updateProgress(id){
+  const idx = order.indexOf(id);
+  document.querySelectorAll('.pos').forEach(el=> el.textContent = (idx+1)+' / '+order.length);
+  document.querySelectorAll('.btn-prev').forEach(el=> el.disabled = idx<=0);
+  document.querySelectorAll('.btn-next').forEach(el=> el.disabled = idx>=order.length-1);
+}
+function go(delta){
+  const current = order.find(o => document.getElementById('panel-'+o).style.display !== 'none');
+  const idx = order.indexOf(current);
+  const next = order[idx+delta];
+  if(next) selectStep(next);
+}
+window.addEventListener('DOMContentLoaded', () => {
+  let start = order[0];
+  try{
+    const saved = localStorage.getItem('marketing_step');
+    if(saved && order.includes(saved)) start = saved;
+  }catch(e){}
+  selectStep(start);
+});
+</script>
 
 </body></html>
