@@ -151,6 +151,32 @@
   .friend strong{ color:var(--accent-dark); font-size:17px; }
   @media (max-width:600px){ .lesson-box dl{ grid-template-columns:1fr; gap:2px; } .lesson-box dd{ margin-bottom:10px; } }
 
+  .future-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; margin-top:28px; }
+  .future-card{ background:var(--paper); border:1px solid var(--line); border-radius:14px; padding:24px 22px; }
+  .future-card .f-icon{ font-size:26px; display:block; margin-bottom:10px; }
+  .future-card h3{ font-size:16px; font-weight:800; margin:0 0 8px; line-height:1.5; }
+  .future-card p{ font-size:13.5px; color:var(--ink-soft); margin:0; }
+  .roadmap{ display:flex; flex-direction:column; gap:0; margin-top:28px; border-left:2px solid var(--accent-light); margin-left:10px; }
+  .road-step{ position:relative; padding:0 0 26px 28px; }
+  .road-step::before{ content:""; position:absolute; left:-8px; top:4px; width:14px; height:14px; border-radius:50%; background:var(--accent); }
+  .road-step .road-label{ font-size:11.5px; font-weight:800; letter-spacing:.1em; color:var(--accent-dark); }
+  .road-step h3{ font-size:16px; margin:4px 0 6px; }
+  .road-step p{ font-size:13.5px; color:var(--ink-soft); margin:0; }
+  .disclaimer{ font-size:11.5px; color:var(--ink-faint); margin-top:18px; }
+
+  .anchor-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(155px,1fr)); gap:12px; margin-top:26px; }
+  .anchor-card{ background:var(--paper); border:1px solid var(--line); border-radius:12px; padding:18px; }
+  .anchor-card .a-label{ font-size:12px; color:var(--ink-faint); margin:0 0 6px; }
+  .anchor-card .a-price{ font-family:'Zen Kaku Gothic New',sans-serif; font-weight:900; font-size:22px; margin:0; color:var(--ink-soft); }
+  .anchor-card .a-sub{ font-size:12px; color:var(--ink-faint); margin:6px 0 0; }
+  .anchor-card.ours{ background:var(--ink); border-color:var(--ink); color:#fff; }
+  .anchor-card.ours .a-label, .anchor-card.ours .a-sub{ color:#B9B9CC; }
+  .anchor-card.ours .a-price{ color:#fff; }
+  .breakdown{ display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:12px; margin-top:22px; }
+  .bd{ background:var(--accent-light); border-radius:12px; padding:18px; text-align:center; }
+  .bd .bd-num{ font-family:'Zen Kaku Gothic New',sans-serif; font-weight:900; font-size:26px; color:var(--accent-dark); display:block; }
+  .bd .bd-label{ font-size:12.5px; color:var(--ink-soft); }
+
   .final-cta{ background:var(--ink); color:#fff; text-align:center; padding:72px 0; }
   .final-cta h2{ font-size:clamp(22px,4vw,30px); font-weight:900; margin:0 0 16px; text-wrap:balance; }
   .final-cta p{ color:#B9B9CC; font-size:14.5px; max-width:460px; margin:0 auto 32px; }
@@ -176,9 +202,9 @@
 
 <section class="hero">
   <div class="wrap">
-    <span class="eyebrow">Video Editing × 収益化</span>
-    <h1>動画編集は、<em>才能</em>じゃない。<br>型と仕組みで、誰でも身につく。</h1>
-    <p class="lead">Premiere Proの基本操作から、実際に案件を獲得するための考え方まで。体系立てて学べる講座を公開しています。</p>
+    <span class="eyebrow">Video Editing × YouTube × 副業</span>
+    <h1><em>好きなこと</em>で、生きていく。<br>その一歩を、動画からはじめよう。</h1>
+    <p class="lead">副業をはじめたい。自分のYouTubeチャンネルを持ちたい。好きなことを、いつか仕事にしたい。<br>動画をつくる力と、届ける力を身につけて、「やってみたい」を「できた」に変えていく講座です。</p>
     <a href="#pricing" class="cta">プランを見る<small>動画編集・マーケ・セットの3プラン</small></a>
     <p class="note">動画編集講座は<strong>講師レッスン2回つき</strong>（オンライン または 福岡市西区で対面）</p>
     <p class="note">※ お申し込み・ご質問はLINE公式アカウントからも承っています。</p>
@@ -194,22 +220,44 @@
 
 <section id="empathy">
   <div class="wrap">
-    <p class="eyebrow-sm">Before</p>
-    <h2 class="section-title">こんな状態、心当たりありませんか？</h2>
+    <p class="eyebrow-sm">Your Wish</p>
+    <h2 class="section-title">こんな「やってみたい」、ありませんか？</h2>
     <ul class="empathy-list">
-      <li><span class="mark">＋</span>動画編集を独学しているけど、我流のまま伸び悩んでいる</li>
-      <li><span class="mark">＋</span>YouTubeやSNSで発信したいが、何から手をつければいいか分からない</li>
-      <li><span class="mark">＋</span>編集スキルを、副業や本業の収入につなげる方法が分からない</li>
-      <li><span class="mark">＋</span>我流のまま時間をかけるより、体系立てて一気に身につけたい</li>
+      <li><span class="mark">＋</span>好きなことを仕事にして、自分らしく生きていきたい</li>
+      <li><span class="mark">＋</span>本業のほかに、自分の力で稼げる副業をはじめたい</li>
+      <li><span class="mark">＋</span>自分のYouTubeチャンネルを立ち上げて、発信してみたい</li>
+      <li><span class="mark">＋</span>時間や場所にしばられない働き方に、少しずつ近づきたい</li>
     </ul>
+    <p style="margin-top:22px;font-size:14.5px;color:var(--ink-soft);">でも、何から始めればいいか分からない。ひとりで独学しても続かなかった。<br>そんなあなたのために、ゼロから順番に進められる講座をつくりました。</p>
+  </div>
+</section>
+
+<section id="future">
+  <div class="wrap">
+    <p class="eyebrow-sm">Your Future</p>
+    <h2 class="section-title">講座を終えたあなたが、<br>手にしている毎日</h2>
+    <div class="future-grid">
+      <div class="future-card"><span class="f-icon">🎬</span><h3>撮った動画を、自分の手で「作品」にできる</h3><p>カット、テロップ、BGM。スマホの中に眠っていた素材が、人に見てもらえる1本に変わります。</p></div>
+      <div class="future-card"><span class="f-icon">💼</span><h3>「動画編集」という、副業の選択肢が持てる</h3><p>編集の実務フローを身につけて、案件に応募できる状態へ。本業のほかに、自分のスキルで収入を得る道がひらけます。</p></div>
+      <div class="future-card"><span class="f-icon">📺</span><h3>自分のチャンネルを、迷わず育てられる</h3><p>企画・サムネイル・投稿後の動き方まで分かるから、「何を出せばいいの？」と手が止まらなくなります。</p></div>
+      <div class="future-card"><span class="f-icon">🌱</span><h3>好きなことで、人とつながれる</h3><p>好きなテーマで発信を続けるうちに、応援してくれる人や、一緒に仕事をしたい人とのつながりが生まれていきます。</p></div>
+    </div>
+
+    <h2 class="section-title" style="margin-top:56px;">「やってみたい」が「仕事」になるまで</h2>
+    <div class="roadmap">
+      <div class="road-step"><span class="road-label">STEP 1</span><h3>つくれるようになる</h3><p>動画編集講座で、Premiere Proの操作から書き出しまでを一通り。講師レッスンで、つまずいたところも直接聞けます。</p></div>
+      <div class="road-step"><span class="road-label">STEP 2</span><h3>発信してみる</h3><p>マーケ講座（基礎編）で、見られる動画・選ばれるチャンネルの考え方を学び、自分の動画を世に出していきます。</p></div>
+      <div class="road-step"><span class="road-label">STEP 3</span><h3>伸ばして、仕事につなげる</h3><p>応用編で、伸ばし方と続け方を身につけます。編集の受注、自分のチャンネルの収益化など、好きなことで生きていく道を広げていきます。</p></div>
+    </div>
+    <p class="disclaimer">※ 成果や収入には個人差があり、収入を保証するものではありません。</p>
   </div>
 </section>
 
 <section id="curriculum">
   <div class="wrap">
     <p class="eyebrow-sm">Course</p>
-    <h2 class="section-title">動画編集講座（全11本）</h2>
-    <p class="section-lead">Premiere Proでの実務フローを、フォルダ作成から書き出しまで一通り解説しています。</p>
+    <h2 class="section-title">動画編集講座（全11本）<br><span style="font-size:.7em;color:var(--ink-soft);">「自分で動画をつくれる人」になる</span></h2>
+    <p class="section-lead">はじめてのPremiere Proでも大丈夫。フォルダ作成から書き出しまで、実際の仕事と同じ流れで順番に進めるので、学び終えるころには1本の動画を最後まで仕上げられるようになります。</p>
     <div class="curriculum">
       <div class="curriculum-item"><span class="curriculum-num">01</span><div><h3>フォルダの作成</h3><p>案件ごとの管理方法</p></div></div>
       <div class="curriculum-item"><span class="curriculum-num">02</span><div><h3>プロジェクトの作成</h3><p>Premiere Proの立ち上げ方</p></div></div>
@@ -252,8 +300,8 @@
 <section id="marketing-curriculum">
   <div class="wrap">
     <p class="eyebrow-sm">Marketing Course</p>
-    <h2 class="section-title">マーケ講座（YouTube運用・収益化）基礎編11本＋応用編13本</h2>
-    <p class="section-lead">編集スキルだけでなく「どう伸ばすか」「どう稼ぐか」まで、実践的な考え方をまとめています。</p>
+    <h2 class="section-title">マーケ講座（YouTube運用・収益化）基礎編11本＋応用編13本<br><span style="font-size:.7em;color:var(--ink-soft);">つくった動画を「届く」「仕事になる」ものに</span></h2>
+    <p class="section-lead">動画はつくって終わりではありません。どうすれば見てもらえるのか、どうすれば応援されるのか、どうすれば仕事につながるのか。好きなことで発信を続けていくための考え方を、まとめて学べます。</p>
     <p style="font-size:14px;font-weight:800;color:var(--ink);margin:32px 0 -12px;">基礎編（全11本）</p>
     <div class="curriculum">
       <div class="curriculum-item"><span class="curriculum-num">01</span><div><h3>広告だけじゃない！YouTubeで稼ぐ9つの方法</h3><p>収益の仕組みを正しく理解する</p></div></div>
@@ -287,6 +335,28 @@
   </div>
 </section>
 
+<section id="value">
+  <div class="wrap">
+    <p class="eyebrow-sm">Value</p>
+    <h2 class="section-title">その158,000円、高いでしょうか？</h2>
+    <p class="section-lead">動画編集やYouTube運用をスクールで学ぶと、一般的にはこれくらいかかります。</p>
+    <div class="anchor-grid">
+      <div class="anchor-card"><p class="a-label">通学型スクール</p><p class="a-price">30万円〜</p><p class="a-sub">通う時間と交通費も必要</p></div>
+      <div class="anchor-card"><p class="a-label">オンラインスクール</p><p class="a-price">10万〜30万円</p><p class="a-sub">編集だけ、運用だけのコースも多い</p></div>
+      <div class="anchor-card"><p class="a-label">独学</p><p class="a-price">0円</p><p class="a-sub">ただし、遠回りした時間は戻らない</p></div>
+      <div class="anchor-card ours"><p class="a-label">この講座（マーケ講座）</p><p class="a-price">¥158,000</p><p class="a-sub">YouTube運用の基礎〜応用まで24本＋テキスト版</p></div>
+    </div>
+    <p style="margin-top:28px;font-size:14.5px;color:var(--ink-soft);">しかも、マーケ講座を分けて考えると――</p>
+    <div class="breakdown">
+      <div class="bd"><span class="bd-num">約6,600円</span><span class="bd-label">動画1本あたり（全24本）</span></div>
+      <div class="bd"><span class="bd-num">約430円</span><span class="bd-label">1日あたり（1年間学んだ場合）</span></div>
+      <div class="bd"><span class="bd-num">月々27,500円</span><span class="bd-label">カードの6回払いなら</span></div>
+    </div>
+    <p style="margin-top:24px;font-size:14.5px;color:var(--ink-soft);">毎日のコーヒー1杯分で、ひとりで何年も試行錯誤して見つける「伸ばし方」を、最短ルートで手に入れられます。<br>そして、動画編集講座もあわせたセットプランなら、<strong>あと45,000円で</strong>編集スキル・講師レッスン2回・購入特典6点までそろいます。</p>
+    <p class="disclaimer">※ スクール料金は2026年時点の一般的な相場です。6回払いの金額はカード決済価格（¥165,000）を6回で割った目安で、分割手数料はカード会社によって異なります。</p>
+  </div>
+</section>
+
 <section id="pricing">
   <div class="wrap">
     <p class="eyebrow-sm">Plan</p>
@@ -295,9 +365,9 @@
     <div class="pricing-grid">
       <div class="plan">
         <h3>動画編集講座</h3>
-        <p class="plan-desc">Premiere Proの実務フローを、基礎から実案件レベルまで</p>
+        <p class="plan-desc">まずは「自分で動画をつくれる」ようになりたい方に</p>
         <p class="price">¥89,000<small> （税込）</small></p>
-        <p class="price-note">講師レッスン2回＋LINE質問対応つき</p>
+        <p class="price-note">6回払いなら月々15,500円〜／講師レッスン2回つき</p>
         <ul>
           <li>動画編集講座 全11本</li>
           <li>講師レッスン 2回（オンライン or 福岡市西区で対面）</li>
@@ -309,9 +379,9 @@
       <div class="plan featured">
         <span class="plan-badge">¥44,000おトク</span>
         <h3>セットプラン</h3>
-        <p class="plan-desc">編集スキルと収益化戦略、両方を身につけたい方に</p>
+        <p class="plan-desc">つくる力と届ける力で、好きなことを仕事にしていきたい方に</p>
         <p class="price">¥203,000<small> （税込）</small></p>
-        <p class="price-note">バラ買い（¥247,000）より¥44,000おトク</p>
+        <p class="price-note">バラ買い（¥247,000）より¥44,000おトク<br>6回払いなら月々約35,400円〜</p>
         <ul>
           <li>動画編集講座 全11本</li>
           <li>マーケ講座（YouTube運用）基礎編11本＋応用編13本</li>
@@ -323,9 +393,9 @@
       </div>
       <div class="plan">
         <h3>マーケ講座</h3>
-        <p class="plan-desc">YouTube運用・収益化・ブランディングの考え方</p>
+        <p class="plan-desc">自分のチャンネルを立ち上げて、育てていきたい方に</p>
         <p class="price">¥158,000<small> （税込）</small></p>
-        <p class="price-note">LINEでの質問対応つき</p>
+        <p class="price-note">6回払いなら月々27,500円〜</p>
         <ul>
           <li>マーケ講座（YouTube運用）基礎編11本＋応用編13本</li>
           <li>LINEでの質問対応</li>
@@ -354,8 +424,8 @@
 
 <section id="line" class="final-cta">
   <div class="wrap">
-    <h2>まずは、編集の「型」を<br>身につけてください。</h2>
-    <p>ご質問・ご相談は、LINE公式アカウントから承っています。お気軽にどうぞ。</p>
+    <h2>好きなことで生きていく未来を、<br>ここからはじめよう。</h2>
+    <p>「やってみたい」と思えた今が、いちばんのスタートです。<br>ご質問・ご相談だけでも大歓迎。LINEから気軽に話しかけてください。</p>
     <p style="font-size:13px;opacity:.85;margin-top:-8px;">※動画編集講座は、画像つきのテキスト版マニュアルも合わせてご覧いただけます。</p>
     <p style="font-size:13px;opacity:.85;margin-top:-8px;">※マーケ講座は、テキスト＆動画の両方で解説しています。</p>
     <a href="https://line.me/R/ti/p/@132frxyz" class="cta" target="_blank" rel="noopener">LINEで相談する</a>
