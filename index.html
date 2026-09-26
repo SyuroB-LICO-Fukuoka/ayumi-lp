@@ -136,6 +136,21 @@
   }
 
   /* ── Final CTA ── */
+  .plan .plan-cta{ display:block; text-align:center; text-decoration:none; font-size:13px; font-weight:700; margin-top:8px; }
+  .plan .plan-cta small{ display:block; font-weight:500; font-size:11px; opacity:.8; }
+  .plan .plan-cta.card{ background:transparent; }
+  .plan.featured .plan-cta.card{ background:transparent; color:#fff; border-color:#6B6B85; }
+  .lesson-box{ background:var(--paper); border:1px solid var(--line); border-radius:14px; padding:26px 24px; margin-top:28px; }
+  .lesson-box dl{ display:grid; grid-template-columns:auto 1fr; gap:10px 20px; margin:0; font-size:14px; }
+  .lesson-box dt{ font-weight:700; color:var(--accent-dark); white-space:nowrap; }
+  .lesson-box dd{ margin:0; color:var(--ink-soft); }
+  .pay-info{ background:var(--paper); border:1px solid var(--line); border-radius:14px; padding:22px 24px; margin-top:28px; font-size:13.5px; color:var(--ink-soft); }
+  .pay-info h3{ font-size:15px; margin:0 0 10px; color:var(--ink); }
+  .pay-info ul{ margin:0; padding-left:1.2em; display:flex; flex-direction:column; gap:6px; }
+  .friend{ background:var(--accent-light); border-radius:14px; padding:22px 24px; margin-top:20px; font-size:14px; color:var(--ink); }
+  .friend strong{ color:var(--accent-dark); font-size:17px; }
+  @media (max-width:600px){ .lesson-box dl{ grid-template-columns:1fr; gap:2px; } .lesson-box dd{ margin-bottom:10px; } }
+
   .final-cta{ background:var(--ink); color:#fff; text-align:center; padding:72px 0; }
   .final-cta h2{ font-size:clamp(22px,4vw,30px); font-weight:900; margin:0 0 16px; text-wrap:balance; }
   .final-cta p{ color:#B9B9CC; font-size:14.5px; max-width:460px; margin:0 auto 32px; }
@@ -165,7 +180,8 @@
     <h1>動画編集は、<em>才能</em>じゃない。<br>型と仕組みで、誰でも身につく。</h1>
     <p class="lead">Premiere Proの基本操作から、実際に案件を獲得するための考え方まで。体系立てて学べる講座を公開しています。</p>
     <a href="#pricing" class="cta">プランを見る<small>動画編集・マーケ・セットの3プラン</small></a>
-    <p class="note">※ お申し込み・ご質問はLINE公式アカウントから承っています。</p>
+    <p class="note">動画編集講座は<strong>講師レッスン2回つき</strong>（オンライン または 福岡市西区で対面）</p>
+    <p class="note">※ お申し込み・ご質問はLINE公式アカウントからも承っています。</p>
   </div>
 </section>
 
@@ -203,6 +219,16 @@
       <div class="curriculum-item"><span class="curriculum-num">06</span><div><h3>テロップ</h3><p>デザイン・入力の実務フロー</p></div></div>
       <div class="curriculum-item"><span class="curriculum-num">07</span><div><h3>BGM・SE・画像挿入</h3><p>演出の作り込み方</p></div></div>
       <div class="curriculum-item"><span class="curriculum-num">08</span><div><h3>書き出し・プロジェクト管理</h3><p>納品までの一連の流れ</p></div><span class="curriculum-tag">番外編あり</span></div>
+    </div>
+    <div class="lesson-box" id="lesson">
+      <p class="eyebrow-sm" style="margin-bottom:14px;">Lesson</p>
+      <h3 style="font-size:18px;margin:0 0 16px;">講師レッスンが2回ついています</h3>
+      <dl>
+        <dt>回数</dt><dd>2回まで（動画編集講座・セットプランに付属）</dd>
+        <dt>形式</dt><dd>オンライン または 対面、お好きな方を選べます</dd>
+        <dt>対面の会場</dt><dd>福岡市西区で開催予定</dd>
+        <dt>追加レッスン</dt><dd>もっと聞きたい方は、完全予約制で<strong>1回 5,500円（税込）</strong>で追加できます</dd>
+      </dl>
     </div>
   </div>
 </section>
@@ -270,38 +296,61 @@
       <div class="plan">
         <h3>動画編集講座</h3>
         <p class="plan-desc">Premiere Proの実務フローを、基礎から実案件レベルまで</p>
-        <p class="price">¥98,000<small> （税込）</small></p>
-        <p class="price-note">LINEでの質問対応つき</p>
+        <p class="price">¥148,000<small> （税込）</small></p>
+        <p class="price-note">講師レッスン2回＋LINE質問対応つき</p>
         <ul>
           <li>動画編集講座 全11本</li>
+          <li>講師レッスン 2回（オンライン or 福岡市西区で対面）</li>
           <li>LINEでの質問対応</li>
         </ul>
         <p class="price-note" style="margin-top:8px;">※購入特典6点はセットプラン限定です</p>
+        <a class="plan-cta pay" data-pay="video_bank" href="https://line.me/R/ti/p/@132frxyz" target="_blank" rel="noopener">申し込む（銀行振込）</a>
+        <a class="plan-cta card pay" data-pay="video_card" href="https://line.me/R/ti/p/@132frxyz" target="_blank" rel="noopener">クレジットカードで申し込む<small>¥153,920（手数料4%込）・最大6回払い</small></a>
       </div>
       <div class="plan featured">
-        <span class="plan-badge">¥48,000おトク</span>
+        <span class="plan-badge">¥46,000おトク</span>
         <h3>セットプラン</h3>
         <p class="plan-desc">編集スキルと収益化戦略、両方を身につけたい方に</p>
-        <p class="price">¥198,000<small> （税込）</small></p>
-        <p class="price-note">バラ買いより¥48,000おトク</p>
+        <p class="price">¥300,000<small> （税込）</small></p>
+        <p class="price-note">バラ買い（¥346,000）より¥46,000おトク</p>
         <ul>
           <li>動画編集講座 全11本</li>
           <li>マーケ講座（YouTube運用）基礎編11本＋応用編13本</li>
+          <li>講師レッスン 2回（オンライン or 福岡市西区で対面）</li>
           <li>購入特典 全6点（バズ動画テンプレ／台本作成AIプロンプト集／企画制作テンプレ／トンマナ整理シート／企業案件返信テンプレ／時短AIツール一覧）</li>
           <li>LINEでの質問対応</li>
         </ul>
+        <a class="plan-cta pay" data-pay="set_bank" href="https://line.me/R/ti/p/@132frxyz" target="_blank" rel="noopener">申し込む（銀行振込）</a>
+        <a class="plan-cta card pay" data-pay="set_card" href="https://line.me/R/ti/p/@132frxyz" target="_blank" rel="noopener">クレジットカードで申し込む<small>¥312,000（手数料4%込）・最大6回払い</small></a>
       </div>
       <div class="plan">
         <h3>マーケ講座</h3>
         <p class="plan-desc">YouTube運用・収益化・ブランディングの考え方</p>
-        <p class="price">¥148,000<small> （税込）</small></p>
+        <p class="price">¥198,000<small> （税込）</small></p>
         <p class="price-note">LINEでの質問対応つき</p>
         <ul>
           <li>マーケ講座（YouTube運用）基礎編11本＋応用編13本</li>
           <li>LINEでの質問対応</li>
         </ul>
         <p class="price-note" style="margin-top:8px;">※購入特典6点はセットプラン限定です</p>
+        <a class="plan-cta pay" data-pay="marketing_bank" href="https://line.me/R/ti/p/@132frxyz" target="_blank" rel="noopener">申し込む（銀行振込）</a>
+        <a class="plan-cta card pay" data-pay="marketing_card" href="https://line.me/R/ti/p/@132frxyz" target="_blank" rel="noopener">クレジットカードで申し込む<small>¥205,920（手数料4%込）・最大6回払い</small></a>
       </div>
+    </div>
+
+    <div class="friend">
+      👥 <strong>お友だちと同時申し込みで、おふたりとも5,000円キャッシュバック</strong><br>
+      <span style="font-size:13px;color:var(--ink-soft);">講座にお友だちと同時にお申し込みいただくと、お二人それぞれに5,000円をキャッシュバックします。お申し込みの際に、LINEでお友だちのお名前をお知らせください。</span>
+    </div>
+
+    <div class="pay-info">
+      <h3>お支払いについて</h3>
+      <ul>
+        <li>銀行振込・クレジットカードでお支払いいただけます。</li>
+        <li>クレジットカード決済の場合は、決済手数料として<strong>4%</strong>を加算した金額となります。</li>
+        <li>クレジットカードは<strong>最大6回までの分割払い</strong>に対応しています。</li>
+        <li>追加の対面レッスン（完全予約制・1回5,500円）は、LINEからご予約ください。</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -309,14 +358,26 @@
 <section id="line" class="final-cta">
   <div class="wrap">
     <h2>まずは、編集の「型」を<br>身につけてください。</h2>
-    <p>お申し込み手続きは、LINE公式アカウントから承っています。決済方法のご案内をお送りします。</p>
+    <p>ご質問・ご相談は、LINE公式アカウントから承っています。お気軽にどうぞ。</p>
     <p style="font-size:13px;opacity:.85;margin-top:-8px;">※動画編集講座は、画像つきのテキスト版マニュアルも合わせてご覧いただけます。</p>
     <p style="font-size:13px;opacity:.85;margin-top:-8px;">※マーケ講座は、テキスト＆動画の両方で解説しています。</p>
-    <a href="https://line.me/R/ti/p/@132frxyz" class="cta" target="_blank" rel="noopener">LINEで購入手続きに進む</a>
+    <a href="https://line.me/R/ti/p/@132frxyz" class="cta" target="_blank" rel="noopener">LINEで相談する</a>
   </div>
 </section>
 
 <footer>© まるちゃんオンライン講座</footer>
 
+<script>
+// マネーフォワードで発行した決済リンクをここに貼る（空欄のボタンはLINEに飛ぶ）
+const PAY_LINKS = {
+  video_bank: '', video_card: '',
+  set_bank: '', set_card: '',
+  marketing_bank: '', marketing_card: ''
+};
+document.querySelectorAll('a.pay').forEach(a => {
+  const url = PAY_LINKS[a.dataset.pay];
+  if (url) a.href = url;
+});
+</script>
 </body>
 </html>
