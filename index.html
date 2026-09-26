@@ -304,8 +304,7 @@
           <li>LINEでの質問対応</li>
         </ul>
         <p class="price-note" style="margin-top:8px;">※購入特典6点はセットプラン限定です</p>
-        <a class="plan-cta pay" data-pay="video_bank" href="https://line.me/R/ti/p/@132frxyz" target="_blank" rel="noopener">申し込む（銀行振込）</a>
-        <a class="plan-cta card pay" data-pay="video_card" href="https://line.me/R/ti/p/@132frxyz" target="_blank" rel="noopener">クレジットカードで申し込む<small>最大6回払い</small></a>
+        <a class="plan-cta" href="https://line.me/R/ti/p/@132frxyz" target="_blank" rel="noopener">LINEから申し込む</a>
       </div>
       <div class="plan featured">
         <span class="plan-badge">¥44,000おトク</span>
@@ -320,8 +319,7 @@
           <li>購入特典 全6点（バズ動画テンプレ／台本作成AIプロンプト集／企画制作テンプレ／トンマナ整理シート／企業案件返信テンプレ／時短AIツール一覧）</li>
           <li>LINEでの質問対応</li>
         </ul>
-        <a class="plan-cta pay" data-pay="set_bank" href="https://line.me/R/ti/p/@132frxyz" target="_blank" rel="noopener">申し込む（銀行振込）</a>
-        <a class="plan-cta card pay" data-pay="set_card" href="https://line.me/R/ti/p/@132frxyz" target="_blank" rel="noopener">クレジットカードで申し込む<small>最大6回払い</small></a>
+        <a class="plan-cta" href="https://line.me/R/ti/p/@132frxyz" target="_blank" rel="noopener">LINEから申し込む</a>
       </div>
       <div class="plan">
         <h3>マーケ講座</h3>
@@ -333,8 +331,7 @@
           <li>LINEでの質問対応</li>
         </ul>
         <p class="price-note" style="margin-top:8px;">※購入特典6点はセットプラン限定です</p>
-        <a class="plan-cta pay" data-pay="marketing_bank" href="https://line.me/R/ti/p/@132frxyz" target="_blank" rel="noopener">申し込む（銀行振込）</a>
-        <a class="plan-cta card pay" data-pay="marketing_card" href="https://line.me/R/ti/p/@132frxyz" target="_blank" rel="noopener">クレジットカードで申し込む<small>最大6回払い</small></a>
+        <a class="plan-cta" href="https://line.me/R/ti/p/@132frxyz" target="_blank" rel="noopener">LINEから申し込む</a>
       </div>
     </div>
 
@@ -367,17 +364,5 @@
 
 <footer>© まるちゃんオンライン講座</footer>
 
-<script>
-// マネーフォワードで発行した決済リンクをここに貼る（空欄のボタンはLINEに飛ぶ）
-const PAY_LINKS = {
-  video_bank: '', video_card: '',
-  set_bank: '', set_card: '',
-  marketing_bank: '', marketing_card: ''
-};
-document.querySelectorAll('a.pay').forEach(a => {
-  const url = PAY_LINKS[a.dataset.pay];
-  if (url) a.href = url;
-});
-</script>
 </body>
 </html>
