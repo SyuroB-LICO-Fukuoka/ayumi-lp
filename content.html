@@ -38,7 +38,7 @@ html,body{margin:0;height:100%;background:var(--ground);color:var(--ink);font-fa
 .panel .lead{color:var(--ink-soft);font-size:14.5px;margin:0;}
 
 .video-wrap{background:#000;border-radius:12px;overflow:hidden;margin:20px 0 28px;box-shadow:0 8px 30px rgba(0,0,0,.18);position:relative;width:100%;aspect-ratio:16/9;height:auto;}
-.video-open{display:block;max-width:720px;margin:-16px 0 24px;padding:12px 14px;border-radius:10px;background:#e8f3f1;color:#0b5a55;font-weight:700;font-size:13.5px;text-decoration:none;text-align:center;}
+.video-wrap::after{content:"";position:absolute;top:0;right:0;width:80px;height:80px;z-index:2;}
 .video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
 .video-pending{
   background:var(--teal-light);border-radius:12px;margin:20px 0 28px;padding:48px 24px;
@@ -410,17 +410,6 @@ table.settings tr:last-child td{background:#fafcfc;}
   </div>
 </div>
 
-<script>
-// スマホでドライブ動画が表示されない場合に備え、各動画の下に「ドライブで開く」リンクを付ける
-document.querySelectorAll('.video-wrap iframe[src*="drive.google.com/file/d/"]').forEach(function(f){
-  var id=f.src.split('/file/d/')[1].split('/')[0];
-  var a=document.createElement('a');
-  a.className='video-open'; a.target='_blank'; a.rel='noopener';
-  a.href='https://drive.google.com/file/d/'+id+'/view';
-  a.textContent='▶ 動画が表示されない・再生できない場合はこちら（Googleドライブで開く）';
-  f.closest('.video-wrap').insertAdjacentElement('afterend', a);
-});
-</script>
 <script>
 const order = ['s1','s2','s3','s32','s4','s5','ex1','ex2','ex3','s6','s7','bonus'];
 function selectStep(id){
