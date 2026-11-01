@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ツール早見表 | まるちゃんオンライン講座</title>
+<style>
+:root{
+  --teal:#0d7d78; --teal-dark:#095b57; --teal-light:#e6f3f2;
+  --ink:#1c2a2a; --ink-soft:#546363; --line:#dbe4e3; --paper:#ffffff; --ground:#f6f9f9;
+  --amber:#f0b429; --amber-light:#fff3cd;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;background:var(--ground);color:var(--ink);font-family:'Hiragino Sans','Noto Sans JP',-apple-system,sans-serif;}
+.app{display:flex;min-height:100vh;}
+.sidebar{width:280px;flex:none;background:var(--teal-dark);color:#fff;padding:24px 0;position:sticky;top:0;height:100vh;overflow-y:auto;}
+.brand{padding:0 22px 18px;font-size:16px;font-weight:900;}
+.brand span{display:block;font-size:11px;font-weight:600;opacity:.7;margin-top:4px;}
+.quicklinks{padding:0 22px 16px;display:flex;flex-direction:column;gap:8px;border-bottom:1px solid rgba(255,255,255,.15);margin-bottom:6px;}
+.quicklink{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);color:#fff;text-decoration:none;font-size:12.5px;font-weight:700;padding:9px 12px;border-radius:8px;}
+.quicklink:hover{background:rgba(255,255,255,.16);}
+.quicklink.active{background:rgba(255,255,255,.22);}
+.toc{padding:10px 22px;display:flex;flex-direction:column;gap:2px;}
+.toc a{color:#fff;opacity:.8;text-decoration:none;font-size:13px;padding:7px 0;}
+.toc a:hover{opacity:1;}
+.main{flex:1;min-width:0;padding:40px 48px 100px;}
+.wrap{max-width:860px;}
+.step-label{display:inline-block;background:var(--teal);color:#fff;font-size:11.5px;font-weight:700;letter-spacing:.1em;padding:5px 14px;border-radius:20px;margin-bottom:12px;}
+h1{font-size:28px;font-weight:900;margin:0 0 8px;}
+.lead{color:var(--ink-soft);font-size:14.5px;line-height:1.8;margin:0 0 20px;}
+.callout{background:var(--teal-light);border-left:4px solid var(--teal);border-radius:0 10px 10px 0;padding:14px 18px;font-size:13.5px;color:var(--ink-soft);margin:18px 0;line-height:1.8;}
+.callout strong{color:var(--teal-dark);}
+.callout.warn{background:var(--amber-light);border-left-color:var(--amber);}
+.callout.warn strong{color:#8a6400;}
+.start{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:10px 0 30px;}
+.start div{background:var(--paper);border:2px solid var(--teal);border-radius:12px;padding:16px;}
+.start b{display:block;font-size:12px;color:var(--teal);margin-bottom:4px;}
+.start h4{margin:0 0 6px;font-size:16px;}
+.start p{margin:0;font-size:12.5px;color:var(--ink-soft);line-height:1.6;}
+h2{font-size:20px;font-weight:900;margin:40px 0 4px;padding-top:8px;scroll-margin-top:16px;}
+h2 .n{display:inline-block;background:var(--teal);color:#fff;font-size:13px;border-radius:6px;padding:2px 9px;margin-right:8px;vertical-align:2px;}
+.sub{color:var(--ink-soft);font-size:13px;margin:0 0 12px;}
+table{width:100%;border-collapse:collapse;background:var(--paper);border-radius:10px;overflow:hidden;font-size:13.5px;}
+th{background:var(--teal);color:#fff;text-align:left;padding:10px 14px;font-weight:700;}
+td{padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.65;}
+tr:last-child td{border-bottom:none;}
+td.name{font-weight:800;white-space:nowrap;}
+td.name a{color:var(--teal-dark);}
+td.price{white-space:nowrap;color:var(--ink-soft);font-size:12.5px;}
+.tag{display:inline-block;font-size:10.5px;font-weight:800;border-radius:4px;padding:1px 6px;margin-left:6px;vertical-align:1px;}
+.tag.easy{background:var(--teal-light);color:var(--teal-dark);}
+.tag.hard{background:#fde8e8;color:#a33;}
+.foot{margin-top:40px;font-size:12px;color:var(--ink-soft);line-height:1.8;}
+@media (max-width:800px){
+  .app{flex-direction:column;}
+  .sidebar{width:100%;height:auto;position:relative;padding:14px 0;}
+  .toc{display:none;}
+  .main{padding:24px 16px 80px;}
+  .start{grid-template-columns:1fr;}
+  table,thead,tbody,tr,td{display:block;width:100%;}
+  thead{display:none;}
+  tr{border-bottom:1px solid var(--line);padding:8px 0;}
+  td{border:none;padding:4px 14px;}
+  td.name,td.price{white-space:normal;}
+}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="sidebar">
+    <div class="brand">まるちゃんオンライン講座<span>動画編集 × マーケ</span></div>
+    <div class="quicklinks">
+      <a class="quicklink" href="content.html"><span class="ql-icon">🎬</span>動画編集講座へ</a>
+      <a class="quicklink" href="marketing_manual.html"><span class="ql-icon">📈</span>マーケ講座（基礎）</a>
+      <a class="quicklink" href="marketing_advanced.html"><span class="ql-icon">🚀</span>マーケ講座（応用）</a>
+      <a class="quicklink active" href="tools.html"><span class="ql-icon">🧰</span>ツール早見表（特典）</a>
+    </div>
+    <div class="toc">
+      <a href="#c1">1. 企画・リサーチ</a>
+      <a href="#c2">2. 台本づくり</a>
+      <a href="#c3">3. 声・ナレーション</a>
+      <a href="#c4">4. 文字起こし・字幕</a>
+      <a href="#c5">5. 動画編集</a>
+      <a href="#c6">6. サムネ・画像</a>
+      <a href="#c7">7. AI動画・アバター</a>
+      <a href="#c8">8. 作業の自動化</a>
+      <a href="#c9">9. あると便利なもの</a>
+    </div>
+  </div>
+
+  <div class="main"><div class="wrap">
+    <span class="step-label">BONUS</span>
+    <h1>動画づくりのツール早見表</h1>
+    <p class="lead">動画を1本作るまでの流れ（企画 → 台本 → 声 → 編集 → サムネ）にそって、使えるツールをまとめました。全部そろえる必要はありません。まずは下の3つから始めて、慣れてきたら少しずつ足していきましょう。</p>
+
+    <div class="start">
+      <div><b>まずはこれ ①</b><h4>ChatGPT か Claude</h4><p>企画のアイデア出しと台本づくり。どちらか1つで大丈夫です。</p></div>
+      <div><b>まずはこれ ②</b><h4>Canva</h4><p>サムネづくり。無料でも、テンプレートだけで十分に作れます。</p></div>
+      <div><b>まずはこれ ③</b><h4>CapCut か Vrew</h4><p>カットと字幕。無料で始められて、スマホでも使えます。</p></div>
+    </div>
+
+    <div class="callout warn"><strong>料金について：</strong>料金は2026年11月に調べた目安です。AIツールは料金やプランがよく変わるので、申し込む前に必ず公式サイトで確かめてください。まずは無料プランで試して、本当に使うものだけ有料にするのがおすすめです。</div>
+
+    <h2 id="c1"><span class="n">1</span>企画・リサーチ</h2>
+    <p class="sub">何を作るかを決める。伸びている動画やキーワードを調べる。</p>
+    <table><thead><tr><th>ツール</th><th>何ができる？</th><th>料金の目安</th></tr></thead><tbody>
+      <tr><td class="name"><a href="https://chatgpt.com/" target="_blank" rel="noopener">ChatGPT</a><span class="tag easy">かんたん</span></td><td>企画のアイデア出し、調べもの、文章づくり。迷ったらまずここに相談。</td><td class="price">無料あり／有料 月20ドル〜</td></tr>
+      <tr><td class="name"><a href="https://www.perplexity.ai/" target="_blank" rel="noopener">Perplexity</a></td><td>ネットを検索して、出どころ付きで答えをまとめてくれる。最新の情報を調べるのに便利。</td><td class="price">無料あり／有料 月20ドル〜</td></tr>
+      <tr><td class="name"><a href="https://felo.ai/ja/search" target="_blank" rel="noopener">Felo</a></td><td>日本語の検索に強いAI検索。調べた内容をまとめたり、スライドにしたりできる。</td><td class="price">無料あり</td></tr>
+      <tr><td class="name"><a href="https://gemini.google.com/" target="_blank" rel="noopener">Gemini</a></td><td>Googleのアプリ（Gmail・ドライブなど）とつながる。「Gem」で自分専用のAIも作れる。</td><td class="price">無料あり／有料 月2,900円〜</td></tr>
+      <tr><td class="name"><a href="https://vidiq.com/" target="_blank" rel="noopener">vidIQ</a></td><td>YouTubeの画面に、キーワードの人気度やタイトル案を表示してくれる拡張機能。応用編で使い方を解説しています。</td><td class="price">無料あり</td></tr>
+    </tbody></table>
+
+    <h2 id="c2"><span class="n">2</span>台本づくり</h2>
+    <p class="sub">話す内容を文章にする。資料を読み込ませて整理する。</p>
+    <table><thead><tr><th>ツール</th><th>何ができる？</th><th>料金の目安</th></tr></thead><tbody>
+      <tr><td class="name"><a href="https://claude.ai/" target="_blank" rel="noopener">Claude</a><span class="tag easy">かんたん</span></td><td>自然な日本語の長い文章が得意。台本の下書きや言い回しの手直しに。</td><td class="price">無料あり／有料 月20ドル〜</td></tr>
+      <tr><td class="name"><a href="https://notebooklm.google.com/" target="_blank" rel="noopener">NotebookLM</a></td><td>自分が入れた資料だけをもとに答えるので、うそが混ざりにくい。台本の整理、音声・スライド・図解（インフォグラフィック）の自動作成も。</td><td class="price">無料で十分使える</td></tr>
+    </tbody></table>
+
+    <h2 id="c3"><span class="n">3</span>声・ナレーション</h2>
+    <p class="sub">顔出し・声出しなしでも動画を作れる。</p>
+    <table><thead><tr><th>ツール</th><th>何ができる？</th><th>料金の目安</th></tr></thead><tbody>
+      <tr><td class="name"><a href="https://elevenlabs.io/ja" target="_blank" rel="noopener">ElevenLabs</a></td><td>文章を自然な声で読み上げ。自分の声を登録して使うことも、効果音づくりや吹き替えもできる。</td><td class="price">無料あり（月1万文字ほど）／有料 月5ドル〜</td></tr>
+    </tbody></table>
+
+    <h2 id="c4"><span class="n">4</span>文字起こし・字幕</h2>
+    <p class="sub">話した内容を文字にする。テロップや議事録づくりがぐっと楽になる。</p>
+    <table><thead><tr><th>ツール</th><th>何ができる？</th><th>料金の目安</th></tr></thead><tbody>
+      <tr><td class="name"><a href="https://www.notta.ai/" target="_blank" rel="noopener">Notta</a></td><td>音声・動画・会議を文字にする。目次やまとめも自動で作れる。Zoom・Meetとつなげると議事録が自動でできる。</td><td class="price">無料あり（月120分）／有料 月1,185円〜</td></tr>
+      <tr><td class="name"><a href="https://www.gladia.io/" target="_blank" rel="noopener">Gladia</a></td><td>精度の高い文字起こし。聞き取りにくい音声に。</td><td class="price">無料枠あり</td></tr>
+      <tr><td class="name"><a href="https://vrew.ai/ja/" target="_blank" rel="noopener">Vrew</a><span class="tag easy">かんたん</span></td><td>動画を入れるだけで字幕を自動で付けてくれる。文章を消すと、その部分の映像もカットされる。</td><td class="price">無料あり／有料 月1,000円台〜</td></tr>
+    </tbody></table>
+
+    <h2 id="c5"><span class="n">5</span>動画編集</h2>
+    <p class="sub">カット・テロップ・BGMを入れて仕上げる。</p>
+    <table><thead><tr><th>ツール</th><th>何ができる？</th><th>料金の目安</th></tr></thead><tbody>
+      <tr><td class="name"><a href="https://www.adobe.com/jp/products/premiere.html" target="_blank" rel="noopener">Premiere Pro</a></td><td>この講座の動画編集で使っているソフト。仕事として編集を受けるならこれ。</td><td class="price">有料（Adobeの月額プラン）</td></tr>
+      <tr><td class="name"><a href="https://www.capcut.com/ja-jp/" target="_blank" rel="noopener">CapCut</a><span class="tag easy">かんたん</span></td><td>スマホでもパソコンでも使える。自動字幕やエフェクトが豊富で、ショート動画づくりに強い。</td><td class="price">無料あり／有料 月1,000円台〜</td></tr>
+      <tr><td class="name"><a href="https://www.blackmagicdesign.com/jp/products/davinciresolve" target="_blank" rel="noopener">DaVinci Resolve</a><span class="tag hard">むずかしめ</span></td><td>無料なのにプロ向けの機能がそろう。色の調整がとくに得意。</td><td class="price">無料（有料版もあり）</td></tr>
+    </tbody></table>
+    <div class="callout warn"><strong>CapCutで仕事の動画を作るとき：</strong>無料プランでは使えない素材や、商用利用に条件がある機能があります。お店・会社の動画や、お金をもらう仕事で使うときは、利用規約を確かめてから使いましょう。</div>
+
+    <h2 id="c6"><span class="n">6</span>サムネ・画像</h2>
+    <p class="sub">クリックしたくなるサムネや、動画に入れる画像を作る。</p>
+    <table><thead><tr><th>ツール</th><th>何ができる？</th><th>料金の目安</th></tr></thead><tbody>
+      <tr><td class="name"><a href="https://www.canva.com/" target="_blank" rel="noopener">Canva</a><span class="tag easy">かんたん</span></td><td>テンプレートを選んで文字を変えるだけでサムネが作れる。AIで画像を作ったり、背景を消したりもできる。</td><td class="price">無料あり／有料（Canva Pro）</td></tr>
+      <tr><td class="name"><a href="https://gemini.google.com/" target="_blank" rel="noopener">Gemini の画像生成</a></td><td>文章で頼むだけで、サムネ・広告バナー・チラシ・図解の画像を作ってくれる。手持ちの写真の手直しも得意。</td><td class="price">無料あり</td></tr>
+      <tr><td class="name"><a href="https://chatgpt.com/" target="_blank" rel="noopener">ChatGPT の画像生成</a></td><td>会話しながら画像を作れる（昔の「DALL-E 3」の後継）。文字入りの画像も作りやすい。</td><td class="price">無料あり（回数に上限）</td></tr>
+      <tr><td class="name"><a href="https://www.midjourney.com/" target="_blank" rel="noopener">Midjourney</a><span class="tag hard">むずかしめ</span></td><td>絵のクオリティがとても高い画像生成AI。おしゃれな雰囲気の画像に。</td><td class="price">有料 月10ドル〜</td></tr>
+      <tr><td class="name"><a href="https://ai.conoha.jp/canvas/" target="_blank" rel="noopener">Stable Diffusion</a><span class="tag hard">むずかしめ</span></td><td>細かく設定して画像を作れる。「ConoHa AI Canvas」なら難しい準備なしで使える。</td><td class="price">サービスにより有料</td></tr>
+      <tr><td class="name"><a href="https://akool.com/ja-jp" target="_blank" rel="noopener">Akool</a></td><td>AIで顔の画像を作ったり、顔を入れ替えたりできる。</td><td class="price">無料お試しあり</td></tr>
+      <tr><td class="name"><a href="https://thumbnail-gallery.net/" target="_blank" rel="noopener">サムネイルギャラリー</a></td><td>人気YouTuberのサムネを集めたサイト。デザインの参考に（そのまま真似はしない）。</td><td class="price">無料</td></tr>
+    </tbody></table>
+
+    <h2 id="c7"><span class="n">7</span>AI動画・アバター</h2>
+    <p class="sub">撮影しなくても、AIで映像やしゃべる人を作る。</p>
+    <table><thead><tr><th>ツール</th><th>何ができる？</th><th>料金の目安</th></tr></thead><tbody>
+      <tr><td class="name"><a href="https://www.heygen.com/" target="_blank" rel="noopener">HeyGen</a></td><td>自分そっくりのアバターや、キャラクターがしゃべる動画を作れる。</td><td class="price">無料お試しあり／有料 月29ドル〜</td></tr>
+      <tr><td class="name"><a href="https://domoai.app/" target="_blank" rel="noopener">DomoAI</a></td><td>画像・文章・動画から動画を作る。AI動画の画質を上げる（アップスケール）ことも。</td><td class="price">有料プラン中心</td></tr>
+      <tr><td class="name"><a href="https://www.meshy.ai/" target="_blank" rel="noopener">Meshy</a></td><td>画像を入れるだけで3Dモデルにできる。オリジナルキャラクターの立体化に。</td><td class="price">無料あり</td></tr>
+      <tr><td class="name"><a href="https://marble.worldlabs.ai/" target="_blank" rel="noopener">Marble</a><span class="tag hard">むずかしめ</span></td><td>AIで3Dの仮想世界を作れる。VRで中に入ることもできる。</td><td class="price">無料あり</td></tr>
+    </tbody></table>
+
+    <h2 id="c8"><span class="n">8</span>作業の自動化</h2>
+    <p class="sub">毎回同じ作業を、AIにまとめて任せる。慣れてきた人向け。</p>
+    <table><thead><tr><th>ツール</th><th>何ができる？</th><th>料金の目安</th></tr></thead><tbody>
+      <tr><td class="name"><a href="https://manus.im/" target="_blank" rel="noopener">Manus</a></td><td>調べもの・資料・スライド・Webサイトまで、まとめて作ってくれるAIエージェント。「Wide Research」で複数の調べものを同時に進められる。</td><td class="price">無料枠あり／有料プランあり</td></tr>
+      <tr><td class="name"><a href="https://claude.com/product/claude-code" target="_blank" rel="noopener">Claude Code</a><span class="tag hard">むずかしめ</span></td><td>パソコンやブラウザの作業を自動でしてくれる。文字起こし→カット→画像入れの動画自動編集、ファイル整理、SNS投稿なども作り込める。</td><td class="price">Claudeの有料プランで使える</td></tr>
+      <tr><td class="name"><a href="https://n8n.io/" target="_blank" rel="noopener">n8n</a><span class="tag hard">むずかしめ</span></td><td>「調べる→スプレッドシートにまとめる→SNSに投稿」のような流れを、ブロックをつなぐだけで自動化。</td><td class="price">無料あり（自分のPCで動かす場合）</td></tr>
+    </tbody></table>
+
+    <h2 id="c9"><span class="n">9</span>あると便利なもの</h2>
+    <table><thead><tr><th>ツール</th><th>何ができる？</th><th>料金の目安</th></tr></thead><tbody>
+      <tr><td class="name"><a href="https://www.lastpass.com/ja" target="_blank" rel="noopener">LastPass</a></td><td>パスワードをまとめて安全に保存。ツールが増えてもログインで困らない。</td><td class="price">無料あり</td></tr>
+      <tr><td class="name"><a href="https://discord.com/" target="_blank" rel="noopener">Discord</a></td><td>チャット・通話ツール。AIツールのコミュニティや、チームでのやりとりに。</td><td class="price">無料</td></tr>
+      <tr><td class="name"><a href="https://www.4kdownload.com/ja/products/videodownloader-42" target="_blank" rel="noopener">4K Video Downloader</a></td><td>動画を保存するソフト。<strong>自分の動画や、使ってよいと許可をもらった動画だけ</strong>に使いましょう。人の動画を勝手に保存・使用するのはNGです。</td><td class="price">無料あり</td></tr>
+    </tbody></table>
+
+    <p class="foot">※料金・機能は2026年11月時点の目安です。各社の公式サイトで最新の情報を確かめてからお使いください。<br>※AIで作った画像・声・動画を使うときは、各ツールの利用規約（商用利用の可否など）を守りましょう。</p>
+  </div></div>
+</div>
+</body>
+</html>
